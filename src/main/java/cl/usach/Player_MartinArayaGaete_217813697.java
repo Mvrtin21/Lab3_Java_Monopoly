@@ -1,3 +1,5 @@
+package cl.usach;
+
 public class Player_MartinArayaGaete_217813697 {
     private int id;
     private String name;
