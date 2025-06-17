@@ -13,12 +13,13 @@ repositories {
 }
 
 application {
-    // Tu clase Main obligatoriamente se llama Main y está en el default package
-    mainClass = 'Main'
+    // Cambia esto por el package real de tu clase Main
+    // Si está en 'cl.usach', debe ser:
+    mainClass = 'cl.usach.Main_MartinArayaGaete_217813697'
 }
 
 run {
-    // para que Scanner(System.in) funcione
+    // Necesario para Scanner(System.in)
     standardInput = System.in
 }
 

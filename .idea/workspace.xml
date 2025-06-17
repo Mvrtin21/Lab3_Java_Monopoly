@@ -6,9 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="eeebd243-57a7-4676-a7c3-d2fa7d7797f4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cl/usach/Board_MartinArayaGaete_217813697.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/usach/Tablero_MartinArayaGaete_217813697.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cl/usach/Game_MartinArayaGaete_217813697.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/usach/Juego_MartinArayaGaete_217813697.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cl/usach/Player_MartinArayaGaete_217813697.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/usach/Jugador_MartinArayaGaete_217813697.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cl/usach/Juego_MartinArayaGaete_217813697.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/usach/Juego_MartinArayaGaete_217813697.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cl/usach/Jugador_MartinArayaGaete_217813697.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/usach/Jugador_MartinArayaGaete_217813697.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cl/usach/Main_MartinArayaGaete_217813697.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/usach/Main_MartinArayaGaete_217813697.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cl/usach/Propiedad.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cl/usach/Propiedad_MartinArayaGaete_217813697.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/usach/Propiedad_MartinArayaGaete_217813697.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cl/usach/Tablero_MartinArayaGaete_217813697.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/usach/Tablero_MartinArayaGaete_217813697.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,25 +45,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/marti/Downloads/USACH/Paradigmas/Labs/Lab3_217813697_MartinArayaGaete/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Lab3_217813697_MartinArayaGaete.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/marti/Downloads/USACH/Paradigmas/Labs/Lab3_217813697_MartinArayaGaete/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -77,7 +82,8 @@
       <updated>1749782541546</updated>
       <workItem from="1749782542769" duration="1670000" />
       <workItem from="1749924470456" duration="4898000" />
-      <workItem from="1750044612611" duration="570000" />
+      <workItem from="1750044612611" duration="649000" />
+      <workItem from="1750106377304" duration="8387000" />
     </task>
     <servers />
   </component>
