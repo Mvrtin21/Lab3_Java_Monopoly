@@ -66,4 +66,5 @@ public class Tablero_MartinArayaGaete_217813697 {
         sb.append("Cartas Comunidad: ").append(cartasComunidad.size()).append(" disponibles\n");
         return sb.toString();
     }
+
 }

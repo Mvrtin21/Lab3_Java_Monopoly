@@ -36,31 +36,83 @@ public class Juego_MartinArayaGaete_217813697 {
     }
 
     /**
-     * Carga 10 cartas de suerte y 10 de comunidad al tablero.
+     * Carga 10 cartas de suerte y 10 de comunidad al tablero con temáticas chilenas.
      */
     private void cargarCartas() {
-        for (int i = 1; i <= 10; i++) {
-            tablero.agregarCartaSuerte(new CartaSuerte_MartinArayaGaete_217813697(i,
-                    "Suerte " + i,
-                    "Accion de suerte " + i));
-            tablero.agregarCartaComunidad(new CartaComunidad_MartinArayaGaete_217813697(i,
-                    "Comunidad " + i,
-                    "Accion de comunidad " + i));
-        }
+        // Cartas de Suerte
+        tablero.agregarCartaSuerte(new CartaSuerte_MartinArayaGaete_217813697(1,
+                "Es tu cumpleaños en Santiago!", "RECIBE 200"));
+        tablero.agregarCartaSuerte(new CartaSuerte_MartinArayaGaete_217813697(2,
+                "Caos en la Costanera Norte", "PAGA 100"));
+        tablero.agregarCartaSuerte(new CartaSuerte_MartinArayaGaete_217813697(3,
+                "Se cortó la luz en Providencia", "PAGA 50"));
+        tablero.agregarCartaSuerte(new CartaSuerte_MartinArayaGaete_217813697(4,
+                "Te gana la micro: llegas tarde", "PAGA 150"));
+        tablero.agregarCartaSuerte(new CartaSuerte_MartinArayaGaete_217813697(5,
+                "Encuentras luca en el suelo", "RECIBE 100"));
+        tablero.agregarCartaSuerte(new CartaSuerte_MartinArayaGaete_217813697(6,
+                "Tienes que pagar el TAG", "PAGA 120"));
+        tablero.agregarCartaSuerte(new CartaSuerte_MartinArayaGaete_217813697(7,
+                "Asado en la casa de un amigo", "PAGA 80"));
+        tablero.agregarCartaSuerte(new CartaSuerte_MartinArayaGaete_217813697(8,
+                "Recibes premio de loto", "RECIBE 500"));
+        tablero.agregarCartaSuerte(new CartaSuerte_MartinArayaGaete_217813697(9,
+                "Multa por mal estacionarte", "PAGA 200"));
+        tablero.agregarCartaSuerte(new CartaSuerte_MartinArayaGaete_217813697(10,
+                "Te traga bus sin vuelto", "PAGA 70"));
+
+        // Cartas de Comunidad
+        tablero.agregarCartaComunidad(new CartaComunidad_MartinArayaGaete_217813697(1,
+                "Te secuestra un venezolano! Pierdes un turno", "CARCEL"));
+        tablero.agregarCartaComunidad(new CartaComunidad_MartinArayaGaete_217813697(2,
+                "Recibe subvención estatal", "RECIBE 300"));
+        tablero.agregarCartaComunidad(new CartaComunidad_MartinArayaGaete_217813697(3,
+                "Inauguraron Metro de Rancagua", "AVANZA 3"));
+        tablero.agregarCartaComunidad(new CartaComunidad_MartinArayaGaete_217813697(4,
+                "Rompes la alcancía", "PAGA 50"));
+        tablero.agregarCartaComunidad(new CartaComunidad_MartinArayaGaete_217813697(5,
+                "Pagas matrícula universitaria", "PAGA 100"));
+        tablero.agregarCartaComunidad(new CartaComunidad_MartinArayaGaete_217813697(6,
+                "Encuentras trabajo part-time", "RECIBE 150"));
+        tablero.agregarCartaComunidad(new CartaComunidad_MartinArayaGaete_217813697(7,
+                "Junta de vecinos: gastas onces", "PAGA 30"));
+        tablero.agregarCartaComunidad(new CartaComunidad_MartinArayaGaete_217813697(8,
+                "Bono por buen contribuyente", "RECIBE 200"));
+        tablero.agregarCartaComunidad(new CartaComunidad_MartinArayaGaete_217813697(9,
+                "Inflación repentina", "PAGA 120"));
+        tablero.agregarCartaComunidad(new CartaComunidad_MartinArayaGaete_217813697(10,
+                "Donas a la Teletón", "PAGA 100"));
     }
 
     /**
-     * Carga 15 propiedades al tablero.
+     * Carga propiedades y casillas especiales del tablero como objetos Propiedad.
      */
     private void cargarPropiedades() {
-        for (int i = 1; i <= 15; i++) {
+        int id = 1;
+
+        // Propiedades comprables
+        String[] comunas = {"Providencia", "Las Condes", "Ñuñoa", "Santiago Centro", "Vitacura",
+                "La Reina", "Macul", "Peñalolén", "La Florida", "Maipú",
+                "Puente Alto", "Recoleta", "Cerrillos", "Lo Barnechea", "Independencia"};
+        for (int i = 0; i < comunas.length; i++, id++) {
             tablero.agregarPropiedad(new Propiedad_MartinArayaGaete_217813697(
-                    i,
-                    "Propiedad " + i,
-                    100 * i,
-                    10 * i,
-                    null));
+                    id,
+                    comunas[i],
+                    200 + (i * 50),    // Precio base creciente
+                    20 + (i * 5),      // Renta base creciente
+                    null
+            ));
         }
+
+        // Casillas especiales
+        tablero.agregarPropiedad(new Propiedad_MartinArayaGaete_217813697(++id, "Salida", 0, 0, new Jugador_MartinArayaGaete_217813697(-1, "Sistema", 0)));
+        tablero.agregarPropiedad(new Propiedad_MartinArayaGaete_217813697(++id, "Comunidad", 0, 0, new Jugador_MartinArayaGaete_217813697(-1, "Sistema", 0)));
+        tablero.agregarPropiedad(new Propiedad_MartinArayaGaete_217813697(++id, "Suerte", 0, 0, new Jugador_MartinArayaGaete_217813697(-1, "Sistema", 0)));
+        tablero.agregarPropiedad(new Propiedad_MartinArayaGaete_217813697(++id, "Cárcel", 0, 0, new Jugador_MartinArayaGaete_217813697(-1, "Sistema", 0)));
+        tablero.agregarPropiedad(new Propiedad_MartinArayaGaete_217813697(++id, "Vas a la Cárcel", 0, 0, new Jugador_MartinArayaGaete_217813697(-1, "Sistema", 0)));
+        tablero.agregarPropiedad(new Propiedad_MartinArayaGaete_217813697(++id, "Estacionamiento Libre", 0, 0, new Jugador_MartinArayaGaete_217813697(-1, "Sistema", 0)));
+        tablero.agregarPropiedad(new Propiedad_MartinArayaGaete_217813697(++id, "Impuesto Municipal", 0, 300, new Jugador_MartinArayaGaete_217813697(-1, "Sistema", 0)));
+        tablero.agregarPropiedad(new Propiedad_MartinArayaGaete_217813697(++id, "Impuesto Verde", 0, 500, new Jugador_MartinArayaGaete_217813697(-1, "Sistema", 0)));
     }
 
     @Override
@@ -77,5 +129,69 @@ public class Juego_MartinArayaGaete_217813697 {
         sb.append("Tablero:\n");
         sb.append(tablero.toString());
         return sb.toString();
+    }
+
+    public void setJugadores(List<Jugador_MartinArayaGaete_217813697> jugadores) {
+        this.jugadores = jugadores;
+    }
+
+    public void setTablero(Tablero_MartinArayaGaete_217813697 tablero) {
+        this.tablero = tablero;
+    }
+
+    public void setDineroBanco(int dineroBanco) {
+        this.dineroBanco = dineroBanco;
+    }
+
+    public void setNumeroDados(int numeroDados) {
+        this.numeroDados = numeroDados;
+    }
+
+    public void setTurnoActual(int turnoActual) {
+        this.turnoActual = turnoActual;
+    }
+
+    public void setTasaImpuesto(int tasaImpuesto) {
+        this.tasaImpuesto = tasaImpuesto;
+    }
+
+    public void setMaximoCasas(int maximoCasas) {
+        this.maximoCasas = maximoCasas;
+    }
+
+    public void setMaximoHoteles(int maximoHoteles) {
+        this.maximoHoteles = maximoHoteles;
+    }
+
+    public List<Jugador_MartinArayaGaete_217813697> getJugadores() {
+        return jugadores;
+    }
+
+    public Tablero_MartinArayaGaete_217813697 getTablero() {
+        return tablero;
+    }
+
+    public int getDineroBanco() {
+        return dineroBanco;
+    }
+
+    public int getNumeroDados() {
+        return numeroDados;
+    }
+
+    public int getTurnoActual() {
+        return turnoActual;
+    }
+
+    public int getTasaImpuesto() {
+        return tasaImpuesto;
+    }
+
+    public int getMaximoCasas() {
+        return maximoCasas;
+    }
+
+    public int getMaximoHoteles() {
+        return maximoHoteles;
     }
 }
