@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eeebd243-57a7-4676-a7c3-d2fa7d7797f4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cl/usach/Juego_MartinArayaGaete_217813697.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/usach/Juego_MartinArayaGaete_217813697.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cl/usach/Main_MartinArayaGaete_217813697.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/usach/Main_MartinArayaGaete_217813697.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cl/usach/Tablero_MartinArayaGaete_217813697.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/usach/Tablero_MartinArayaGaete_217813697.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,8 +54,8 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/marti/Downloads/USACH/Paradigmas/Labs/Lab3_217813697_MartinArayaGaete/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
@@ -85,8 +84,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
-        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26094.121" />
+        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-IU-251.26094.121" />
       </set>
     </attachedChunks>
   </component>
@@ -102,6 +101,7 @@
       <workItem from="1750044612611" duration="649000" />
       <workItem from="1750106377304" duration="8451000" />
       <workItem from="1750209393268" duration="3711000" />
+      <workItem from="1750216974287" duration="3725000" />
     </task>
     <servers />
   </component>

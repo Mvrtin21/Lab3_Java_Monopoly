@@ -2,9 +2,6 @@ package cl.usach;
 
 import java.util.Scanner;
 
-/**
- * Clase principal que inicia el juego CAPITALIA y maneja el menú de interacción por consola.
- */
 public class Main_MartinArayaGaete_217813697 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -15,9 +12,10 @@ public class Main_MartinArayaGaete_217813697 {
             System.out.println("\n### CAPITALIA - Menú Principal ###");
             System.out.println("Bienvenido al juego CAPITALIA");
             System.out.println("Seleccione una opción:");
-            System.out.println("1. Jugar");
+            System.out.println("1. Crear nueva partida");
             System.out.println("2. Visualizar estado actual del tablero");
-            System.out.println("3. Salir del juego");
+            System.out.println("3. Jugar turno");
+            System.out.println("4. Salir del juego");
             System.out.print("Ingrese su opción: ");
 
             int opcion = -1;
@@ -50,7 +48,6 @@ public class Main_MartinArayaGaete_217813697 {
                     juego.setNumeroDados(dados);
 
                     System.out.println("\n¡Juego creado exitosamente!");
-                    System.out.println("Comienza el juego…\n");
                     break;
 
                 case 2:
@@ -62,6 +59,26 @@ public class Main_MartinArayaGaete_217813697 {
                     break;
 
                 case 3:
+                    if (juego != null) {
+                        boolean jugando = true;
+                        while (jugando) {
+                            System.out.println("\n### Realizar Jugada ###");
+
+                            // Aquí asumo que el juego lleva la cuenta del turno actual
+                            juego.jugarTurno();  // <-- Este método lo debes tener implementado
+
+                            System.out.print("\n¿Desea jugar otro turno? (S/N): ");
+                            String respuesta = sc.nextLine().trim().toUpperCase();
+                            if (!respuesta.equals("S")) {
+                                jugando = false;
+                            }
+                        }
+                    } else {
+                        System.out.println("No existe una partida activa. Primero crea una nueva partida.");
+                    }
+                    break;
+
+                case 4:
                     System.out.println("Gracias por jugar CAPITALIA. ¡Hasta la próxima!");
                     ejecutando = false;
                     break;
