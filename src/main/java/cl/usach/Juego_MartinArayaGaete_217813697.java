@@ -285,5 +285,32 @@ public class Juego_MartinArayaGaete_217813697 {
         return true;
     }
 
+    // RF18. (0.1 pts) Calcular Renta Propiedad. Calcular la renta de una propiedad sumando todas las casas y hoteles que tenga.
+    public int calcularRentaPropiedad(Propiedad_MartinArayaGaete_217813697 propiedad) {
+        // Si la propiedad está hipotecada o no tiene dueño, no se cobra renta
+        if (propiedad.isEstaHipotecada() || propiedad.getDueño() == null || propiedad.getDueño().getId() == -1) {
+            return 0;
+        }
+
+        int rentaBase = propiedad.getRenta();
+        int casas = propiedad.getCasas();
+        boolean esHotel = propiedad instanceof Hotel_MartinArayaGaete_217813697;
+
+        // Renta base si no tiene construcciones
+        if (casas == 0 && !esHotel) {
+            return rentaBase;
+        }
+
+        // Aumento por casas
+        if (!esHotel) {
+            double aumento = rentaBase * (1 + (0.2 * casas));
+            return (int) Math.round(aumento);
+        }
+
+        // Si es hotel, renta es el doble de la renta con el máximo de casas
+        int rentaMaxCasas = (int) Math.round(rentaBase * (1 + (0.2 * maximoCasas)));
+        return rentaMaxCasas * 2;
+    }
+    
 
 }
