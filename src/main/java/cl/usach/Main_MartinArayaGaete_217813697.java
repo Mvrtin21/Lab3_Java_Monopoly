@@ -38,8 +38,7 @@ public class Main_MartinArayaGaete_217813697 {
                         System.out.println("\n--- Configuración Jugador " + i + " ---");
                         System.out.print("Ingrese nombre del jugador " + i + ": ");
                         String nombre = sc.nextLine();
-                        Jugador_MartinArayaGaete_217813697 jugador = new Jugador_MartinArayaGaete_217813697(i, nombre, 1500);
-                        juego.getJugadores().add(jugador);
+                        juego.agregarJugador(nombre, i);
                     }
 
                     System.out.println("\n--- Configuración del Juego ---");
