@@ -1,5 +1,6 @@
 package cl.usach;
 
+import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -311,6 +312,258 @@ public class Juego_MartinArayaGaete_217813697 {
         int rentaMaxCasas = (int) Math.round(rentaBase * (1 + (0.2 * maximoCasas)));
         return rentaMaxCasas * 2;
     }
-    
+
+    // RF19. (0.1 pts) Calcular Renta Jugador. Calcular la renta de las propiedades de un jugador.
+    public int calcularRentaJugador(Jugador_MartinArayaGaete_217813697 jugador) {
+        int rentaTotal = 0;
+
+        for (Propiedad_MartinArayaGaete_217813697 propiedad : jugador.getPropiedades()) {
+            int renta = calcularRentaPropiedad(propiedad); // Reutiliza RF18
+            rentaTotal += renta;
+        }
+
+        // Aplica impuesto
+        double impuesto = (rentaTotal * tasaImpuesto) / 100.0;
+
+        return (int) Math.round(impuesto);
+    }
+
+    // RF20. (0.2 pts) Construir Hotel. Construir Hotel en una Propiedad
+    public boolean construirHotel(Jugador_MartinArayaGaete_217813697 jugador, Propiedad_MartinArayaGaete_217813697 propiedad) {
+        // Verificar que el jugador sea el dueño
+        if (propiedad.getDueño() == null || propiedad.getDueño().getId() != jugador.getId()) {
+            System.out.println("No puedes construir un hotel en \"" + propiedad.getNombre() + "\" porque no eres el dueño.");
+            return false;
+        }
+
+        // Verificar que no tenga ya un hotel
+        if (propiedad.isEsHotel()) {
+            System.out.println("La propiedad \"" + propiedad.getNombre() + "\" ya tiene un hotel.");
+            return false;
+        }
+
+        // Verificar que tenga el número máximo de casas permitido
+        if (propiedad.getCasas() < maximoCasas) {
+            System.out.println("No se puede construir hotel. La propiedad \"" + propiedad.getNombre() +
+                    "\" tiene solo " + propiedad.getCasas() + " casas. Se requieren " + maximoCasas + ".");
+            return false;
+        }
+
+        // Convertir a hotel
+        propiedad.setEsHotel(true);
+        propiedad.setCasas(0);
+
+        System.out.println("¡" + jugador.getNombre() + " ha construido un hotel en \"" + propiedad.getNombre() + "\"!");
+        return true;
+    }
+
+    // RF20.1. (? pts) Construir Casa. Construir Casa en una Propiedad
+    public boolean construirCasa(Jugador_MartinArayaGaete_217813697 jugador, Propiedad_MartinArayaGaete_217813697 propiedad) {
+
+        if (propiedad.getDueño() == null || !propiedad.getDueño().equals(jugador)) {
+            System.out.println("Error: El jugador \"" + jugador.getNombre() + "\" no es el dueño de \"" + propiedad.getNombre() + "\".");
+            return false;
+        }
+
+        if (propiedad.isEsHotel()) {
+            System.out.println("No se puede construir casas. La propiedad \"" + propiedad.getNombre() + "\" ya tiene un hotel.");
+            return false;
+        }
+
+        if (propiedad.getCasas() >= maximoCasas) {
+            System.out.println("La propiedad \"" + propiedad.getNombre() + "\" ya tiene el máximo de casas permitido.");
+            return false;
+        }
+
+        int precioCasa = propiedad.getPrecio() / 3;
+
+        if (jugador.getDinero() < precioCasa) {
+            System.out.println("El jugador \"" + jugador.getNombre() + "\" no tiene suficiente dinero para construir una casa. Requiere $" + precioCasa);
+            return false;
+        }
+
+        // Realizar la construcción
+        propiedad.setCasas(propiedad.getCasas() + 1);
+        jugador.setDinero(jugador.getDinero() - precioCasa);
+
+        System.out.println("✅ Se construyó una casa en \"" + propiedad.getNombre() + "\". Total casas: " + propiedad.getCasas());
+        return true;
+    }
+
+    // 21. RF21. (0.2 pts) Pagar Renta. Jugador paga renta a otro.
+    public boolean pagarRenta(Jugador_MartinArayaGaete_217813697 quienPaga, Propiedad_MartinArayaGaete_217813697 propiedad) {
+        Jugador_MartinArayaGaete_217813697 dueño = propiedad.getDueño();
+
+        if (dueño == null || dueño == quienPaga) {
+            // No se paga renta si no hay dueño o si es suya
+            return false;
+        }
+
+        int renta = propiedad.getRenta();
+
+        if (quienPaga.getDinero() < renta) {
+            System.out.println("¡" + quienPaga.getNombre() + " no tiene suficiente dinero para pagar la renta de $" + renta + "!");
+            System.out.println("Se declara bancarrota. Todas sus propiedades pasarán a " + dueño.getNombre() + ".");
+
+            // Transferencia de propiedades
+            for (Propiedad_MartinArayaGaete_217813697 prop : quienPaga.getPropiedades()) {
+                prop.setDueño(dueño);
+                dueño.agregarPropiedad(prop);
+            }
+
+            // Limpiar jugador en bancarrota
+            quienPaga.getPropiedades().clear();
+            quienPaga.setDinero(0);
+
+            System.out.println(quienPaga.getNombre() + " ha quedado en bancarrota. RIP.");
+            return false;
+        }
+
+        // Pago normal
+        quienPaga.setDinero(quienPaga.getDinero() - renta);
+        dueño.setDinero(dueño.getDinero() + renta);
+
+        System.out.println(quienPaga.getNombre() + " pagó $" + renta + " a " + dueño.getNombre() + " por la propiedad \"" + propiedad.getNombre() + "\".");
+        return true;
+    }
+
+    // RF22. (0.2 pts) Hipotecar Propiedad. Hipotecar una propiedad
+    public boolean hipotecarPropiedad(Jugador_MartinArayaGaete_217813697 jugador, Propiedad_MartinArayaGaete_217813697 propiedad) {
+        // Verifica que el jugador sea el dueño
+        if (propiedad.getDueño() == null || propiedad.getDueño() != jugador) {
+            System.out.println("No puedes hipotecar una propiedad que no te pertenece.");
+            return false;
+        }
+
+        if (propiedad.isEstaHipotecada()) {
+            System.out.println("La propiedad \"" + propiedad.getNombre() + "\" ya está hipotecada.");
+            return false;
+        }
+
+        int prestamo = calcularRentaPropiedad(propiedad); // usamos método reutilizable
+        propiedad.setEstaHipotecada(true);
+        jugador.setDinero(jugador.getDinero() + prestamo);
+
+        System.out.println("Has hipotecado \"" + propiedad.getNombre() + "\" y recibido $" + prestamo + ".");
+        return true;
+    }
+
+    // RF22.1. (? pts) Hipotecar Propiedad. Hipotecar una propiedad
+    public boolean deshipotecarPropiedad(Jugador_MartinArayaGaete_217813697 jugador, Propiedad_MartinArayaGaete_217813697 propiedad) {
+        if (propiedad.getDueño() == null || propiedad.getDueño() != jugador) {
+            System.out.println("No puedes deshipotecar una propiedad que no te pertenece.");
+            return false;
+        }
+
+        if (!propiedad.isEstaHipotecada()) {
+            System.out.println("La propiedad \"" + propiedad.getNombre() + "\" no está hipotecada.");
+            return false;
+        }
+
+        int penalizacion = calcularRentaPropiedad(propiedad) * 2;
+
+        if (jugador.getDinero() < penalizacion) {
+            System.out.println("No tienes suficiente dinero para deshipotecar \"" + propiedad.getNombre() + "\". Requiere $" + penalizacion + ".");
+            return false;
+        }
+
+        jugador.setDinero(jugador.getDinero() - penalizacion);
+        propiedad.setEstaHipotecada(false);
+
+        System.out.println("Has deshipotecado \"" + propiedad.getNombre() + "\" pagando $" + penalizacion + ".");
+        return true;
+    }
+
+    // RF23. (0.2 pts) Extraer Carta. Extraer una carta del mazo.
+    public CartaSuerte_MartinArayaGaete_217813697 extraerCartaSuerte() {
+        List<CartaSuerte_MartinArayaGaete_217813697> cartasSuerte = tablero.getCartasSuerte();
+        if (cartasSuerte.isEmpty()) {
+            System.out.println("¡El mazo de cartas de Suerte está vacío!");
+            return null;
+        }
+
+        int indice = new Random().nextInt(cartasSuerte.size());
+        return cartasSuerte.remove(indice);
+    }
+
+
+    public CartaComunidad_MartinArayaGaete_217813697 extraerCartaComunidad() {
+        List<CartaComunidad_MartinArayaGaete_217813697> cartasComunidad = tablero.getCartasComunidad();
+        if (cartasComunidad.isEmpty()) {
+            System.out.println("¡El mazo de cartas de Comunidad está vacío!");
+            return null;
+        }
+
+        int indice = new Random().nextInt(cartasComunidad.size());
+        return cartasComunidad.remove(indice);
+    }
+
+    // RF24. (0.1 pts) Verificar bancarrota. Verificar si un jugador se encuentra en bancarrota (sin dinero).
+    public boolean verificarBancarrota(Jugador_MartinArayaGaete_217813697 jugador) {
+        return jugador.getDinero() <= 0;
+    }
+
+    // 25. RF25. (1 pts) Jugar Turno. Ejecuta un turno completo aplicando todas las reglas del juego
+    public void jugarTurno(Scanner sc) {
+        // 1) Obtener jugador actual
+        Jugador_MartinArayaGaete_217813697 jugador = jugadores.get(turnoActual);
+        System.out.println("\n--- Turno de " + jugador.getNombre() + " ---");
+
+        // 2) Lanzar dados y mostrar resultados
+        List<Integer> resultados = lanzarDados();
+        System.out.print("Dados: ");
+        for (int d : resultados) {
+            System.out.print(d + " ");
+        }
+        System.out.println();
+
+        // 3) Calcular suma y mover
+        int suma = 0;
+        for (int d : resultados) suma += d;
+        moverJugador(jugador.getId(), suma);
+
+        // 4) Procesar casilla de destino
+        int pos = jugador.getPosicionActual();
+        Propiedad_MartinArayaGaete_217813697 casilla = tablero.getPropiedades().get(pos);
+        System.out.println("Caíste en casilla [" + pos + "]: " + casilla.getNombre());
+
+        // 5) Si es propiedad sin dueño, ofrecer compra
+        if (casilla.getDueño() == null && casilla.getPrecio() > 0) {
+            System.out.print("¿Comprar \"" + casilla.getNombre() + "\" por $" + casilla.getPrecio() + "? (S/N): ");
+            String resp = sc.nextLine();
+            if (resp.equalsIgnoreCase("S")) {
+                comprarPropiedad(jugador, casilla);
+            } else {
+                System.out.println("No compraste la propiedad.");
+            }
+        }
+        // 6) Si tiene dueño distinto, pagar renta
+        else if (casilla.getDueño() != null && casilla.getDueño() != jugador) {
+            pagarRenta(jugador, casilla);
+        }
+        // casillas especiales (Impuesto, Suerte, Comunidad, Cárcel…)
+        else {
+            String tipo = casilla.getTipo();
+            if (tipo.equals("Impuesto")) {
+                System.out.println("Debes pagar impuesto de $" + casilla.getRenta());
+                pagarRenta(jugador, casilla);
+            } else if (tipo.equals("Suerte")) {
+                CartaSuerte_MartinArayaGaete_217813697 c = tablero.extraerCartaSuerte();
+                if (c != null) c.ejecutarAccion(this);
+            } else if (tipo.equals("Comunidad")) {
+                CartaComunidad_MartinArayaGaete_217813697 c = tablero.extraerCartaComunidad();
+                if (c != null) c.ejecutarAccion(this);
+            } else if (tipo.equals("Carcel")) {
+                System.out.println("¡Vas a la cárcel!");
+                jugador.setEstaEnCarcel(true);
+            }
+            // Salida, Estacionamiento, etc. no hacen nada aquí
+        }
+
+        // 7) Avanzar turno
+        turnoActual = (turnoActual + 1) % jugadores.size();
+        System.out.println("Turno para: " + jugadores.get(turnoActual).getNombre());
+    }
+
 
 }

@@ -11,8 +11,6 @@ public class Tablero_MartinArayaGaete_217813697 {
     private List<Propiedad_MartinArayaGaete_217813697> propiedades;
     private List<CartaSuerte_MartinArayaGaete_217813697> cartasSuerte;
     private List<CartaComunidad_MartinArayaGaete_217813697> cartasComunidad;
-    private final int POSICION_SALIDA = 0;
-    private final int POSICION_CARCEL = 10; // Por defecto, puedes cambiarlo si quieres
 
     /**
      * Constructor del tablero. Inicializa las listas vacías.
@@ -47,14 +45,6 @@ public class Tablero_MartinArayaGaete_217813697 {
         return cartasComunidad;
     }
 
-    public int getPosicionSalida() {
-        return POSICION_SALIDA;
-    }
-
-    public int getPosicionCarcel() {
-        return POSICION_CARCEL;
-    }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -67,4 +57,15 @@ public class Tablero_MartinArayaGaete_217813697 {
         return sb.toString();
     }
 
+    public void setPropiedades(List<Propiedad_MartinArayaGaete_217813697> propiedades) {
+        this.propiedades = propiedades;
+    }
+
+    public void setCartasSuerte(List<CartaSuerte_MartinArayaGaete_217813697> cartasSuerte) {
+        this.cartasSuerte = cartasSuerte;
+    }
+
+    public void setCartasComunidad(List<CartaComunidad_MartinArayaGaete_217813697> cartasComunidad) {
+        this.cartasComunidad = cartasComunidad;
+    }
 }

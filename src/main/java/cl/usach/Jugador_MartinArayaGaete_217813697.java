@@ -15,13 +15,8 @@ public class Jugador_MartinArayaGaete_217813697 {
     private int posicionActual;
     private boolean estaEnCarcel;
     private int totalCartasSalirCarcel;
+    private int contadorCarcel;
 
-    /**
-     * Constructor de Jugador.
-     * @param id Identificador único del jugador.
-     * @param nombre Nombre del jugador.
-     * @param dinero Capital inicial del jugador.
-     */
     public Jugador_MartinArayaGaete_217813697(int id, String nombre, int dinero) {
         this.id = id;
         this.nombre = nombre;
@@ -30,6 +25,7 @@ public class Jugador_MartinArayaGaete_217813697 {
         this.posicionActual = 0; // Salida
         this.estaEnCarcel = false;
         this.totalCartasSalirCarcel = 0;
+        this.contadorCarcel = 0;
     }
 
     // Getters
@@ -40,25 +36,23 @@ public class Jugador_MartinArayaGaete_217813697 {
     public int getPosicionActual() { return posicionActual; }
     public boolean isEstaEnCarcel() { return estaEnCarcel; }
     public int getTotalCartasSalirCarcel() { return totalCartasSalirCarcel; }
+    public int getContadorCarcel() {
+        return contadorCarcel;
+    }
 
     // Setters / Modificadores
     public void setDinero(int dinero) { this.dinero = dinero; }
     public void setPosicionActual(int posicionActual) { this.posicionActual = posicionActual; }
     public void setEstaEnCarcel(boolean estaEnCarcel) { this.estaEnCarcel = estaEnCarcel; }
     public void setTotalCartasSalirCarcel(int totalCartasSalirCarcel) { this.totalCartasSalirCarcel = totalCartasSalirCarcel; }
+    public void setContadorCarcel(int contadorCarcel) {
+        this.contadorCarcel = contadorCarcel;
+    }
 
-    /**
-     * Añade una propiedad al jugador.
-     * @param propiedad La propiedad a añadir.
-     */
     public void agregarPropiedad(Propiedad_MartinArayaGaete_217813697 propiedad) {
         propiedades.add(propiedad);
     }
 
-    /**
-     * Elimina una propiedad del jugador.
-     * @param propiedad La propiedad a eliminar.
-     */
     public void eliminarPropiedad(Propiedad_MartinArayaGaete_217813697 propiedad) {
         propiedades.remove(propiedad);
     }
