@@ -76,13 +76,18 @@ public class Main_MartinArayaGaete_217813697 {
                         int idJc = Integer.parseInt(sc.nextLine());
                         System.out.print("ID propiedad: ");
                         int idPc = Integer.parseInt(sc.nextLine());
-                        Jugador_MartinArayaGaete_217813697 jugC =
-                                juego.getJugadores().stream()
-                                        .filter(j -> j.getId() == idJc)
-                                        .findFirst().orElse(null);
-                        Propiedad_MartinArayaGaete_217813697 propC =
-                                juego.getTablero().getPropiedades().get(idPc);
+
+                        Jugador_MartinArayaGaete_217813697 jugC = null;
+                        for (Jugador_MartinArayaGaete_217813697 j : juego.getJugadores()) {
+                            if (j.getId() == idJc) {
+                                jugC = j;
+                                break;
+                            }
+                        }
+
                         if (jugC != null) {
+                            Propiedad_MartinArayaGaete_217813697 propC =
+                                    juego.getTablero().getPropiedades().get(idPc);
                             juego.construirCasa(propC);
                         } else {
                             System.out.println("Jugador no encontrado.");
@@ -99,6 +104,8 @@ public class Main_MartinArayaGaete_217813697 {
                         int idJh = Integer.parseInt(sc.nextLine());
                         System.out.print("ID propiedad: ");
                         int idPh = Integer.parseInt(sc.nextLine());
+
+                        // No necesitas buscar jugador porque hotel no depende de él en tu lógica
                         Propiedad_MartinArayaGaete_217813697 propH =
                                 juego.getTablero().getPropiedades().get(idPh);
                         juego.construirHotel(propH);
@@ -114,13 +121,18 @@ public class Main_MartinArayaGaete_217813697 {
                         int idJhip = Integer.parseInt(sc.nextLine());
                         System.out.print("ID propiedad: ");
                         int idPhip = Integer.parseInt(sc.nextLine());
-                        Jugador_MartinArayaGaete_217813697 jugHip =
-                                juego.getJugadores().stream()
-                                        .filter(j -> j.getId() == idJhip)
-                                        .findFirst().orElse(null);
-                        Propiedad_MartinArayaGaete_217813697 propHip =
-                                juego.getTablero().getPropiedades().get(idPhip);
+
+                        Jugador_MartinArayaGaete_217813697 jugHip = null;
+                        for (Jugador_MartinArayaGaete_217813697 j : juego.getJugadores()) {
+                            if (j.getId() == idJhip) {
+                                jugHip = j;
+                                break;
+                            }
+                        }
+
                         if (jugHip != null) {
+                            Propiedad_MartinArayaGaete_217813697 propHip =
+                                    juego.getTablero().getPropiedades().get(idPhip);
                             juego.hipotecarPropiedad(jugHip, propHip);
                         } else {
                             System.out.println("Jugador no encontrado.");
@@ -137,13 +149,18 @@ public class Main_MartinArayaGaete_217813697 {
                         int idJdes = Integer.parseInt(sc.nextLine());
                         System.out.print("ID propiedad: ");
                         int idPdes = Integer.parseInt(sc.nextLine());
-                        Jugador_MartinArayaGaete_217813697 jugDes =
-                                juego.getJugadores().stream()
-                                        .filter(j -> j.getId() == idJdes)
-                                        .findFirst().orElse(null);
-                        Propiedad_MartinArayaGaete_217813697 propDes =
-                                juego.getTablero().getPropiedades().get(idPdes);
+
+                        Jugador_MartinArayaGaete_217813697 jugDes = null;
+                        for (Jugador_MartinArayaGaete_217813697 j : juego.getJugadores()) {
+                            if (j.getId() == idJdes) {
+                                jugDes = j;
+                                break;
+                            }
+                        }
+
                         if (jugDes != null) {
+                            Propiedad_MartinArayaGaete_217813697 propDes =
+                                    juego.getTablero().getPropiedades().get(idPdes);
                             juego.deshipotecarPropiedad(jugDes, propDes);
                         } else {
                             System.out.println("Jugador no encontrado.");
@@ -161,7 +178,6 @@ public class Main_MartinArayaGaete_217813697 {
                     System.out.println("Opción inválida.");
             }
         }
-
         sc.close();
     }
 }
