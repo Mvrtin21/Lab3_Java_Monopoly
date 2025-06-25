@@ -330,32 +330,28 @@ public class Juego_MartinArayaGaete_217813697 {
 
     // RF20. (0.2 pts) Construir Hotel. Construir Hotel en una Propiedad
     public boolean construirHotel(Jugador_MartinArayaGaete_217813697 jugador, Propiedad_MartinArayaGaete_217813697 propiedad) {
-        // Verificar que el jugador sea el dueño
         if (propiedad.getDueño() == null || propiedad.getDueño().getId() != jugador.getId()) {
             System.out.println("No puedes construir un hotel en \"" + propiedad.getNombre() + "\" porque no eres el dueño.");
             return false;
         }
 
-        // Verificar que no tenga ya un hotel
         if (propiedad.isEsHotel()) {
             System.out.println("La propiedad \"" + propiedad.getNombre() + "\" ya tiene un hotel.");
             return false;
         }
 
-        // Verificar que tenga el número máximo de casas permitido
         if (propiedad.getCasas() < maximoCasas) {
-            System.out.println("No se puede construir hotel. La propiedad \"" + propiedad.getNombre() +
-                    "\" tiene solo " + propiedad.getCasas() + " casas. Se requieren " + maximoCasas + ".");
+            System.out.println("No se puede construir hotel. Se requieren " + maximoCasas + " casas.");
             return false;
         }
 
-        // Convertir a hotel
         propiedad.setEsHotel(true);
         propiedad.setCasas(0);
 
         System.out.println("¡" + jugador.getNombre() + " ha construido un hotel en \"" + propiedad.getNombre() + "\"!");
         return true;
     }
+
 
     // RF20.1. (? pts) Construir Casa. Construir Casa en una Propiedad
     public boolean construirCasa(Jugador_MartinArayaGaete_217813697 jugador, Propiedad_MartinArayaGaete_217813697 propiedad) {
