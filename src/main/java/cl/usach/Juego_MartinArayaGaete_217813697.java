@@ -352,7 +352,6 @@ public class Juego_MartinArayaGaete_217813697 {
         return true;
     }
 
-
     // RF20.1. (? pts) Construir Casa. Construir Casa en una Propiedad
     public boolean construirCasa(Jugador_MartinArayaGaete_217813697 jugador, Propiedad_MartinArayaGaete_217813697 propiedad) {
 

@@ -88,7 +88,7 @@ public class Main_MartinArayaGaete_217813697 {
                         if (jugC != null) {
                             Propiedad_MartinArayaGaete_217813697 propC =
                                     juego.getTablero().getPropiedades().get(idPc);
-                            juego.construirCasa(propC);
+                            juego.construirCasa(jugC, propC);
                         } else {
                             System.out.println("Jugador no encontrado.");
                         }
@@ -105,10 +105,20 @@ public class Main_MartinArayaGaete_217813697 {
                         System.out.print("ID propiedad: ");
                         int idPh = Integer.parseInt(sc.nextLine());
 
+
+
+                        Jugador_MartinArayaGaete_217813697 jugC = null;
+                        for (Jugador_MartinArayaGaete_217813697 j : juego.getJugadores()) {
+                            if (j.getId() == idJh) {
+                                jugC = j;
+                                break;
+                            }
+                        }
+
                         // No necesitas buscar jugador porque hotel no depende de él en tu lógica
                         Propiedad_MartinArayaGaete_217813697 propH =
                                 juego.getTablero().getPropiedades().get(idPh);
-                        juego.construirHotel(propH);
+                        juego.construirHotel(jugC, propH);
                     }
                     break;
 
