@@ -469,29 +469,6 @@ public class Juego_MartinArayaGaete_217813697 {
         return true;
     }
 
-    // RF23. (0.2 pts) Extraer Carta. Extraer una carta del mazo.
-    public CartaSuerte_MartinArayaGaete_217813697 extraerCartaSuerte() {
-        List<CartaSuerte_MartinArayaGaete_217813697> cartasSuerte = tablero.getCartasSuerte();
-        if (cartasSuerte.isEmpty()) {
-            System.out.println("¡El mazo de cartas de Suerte está vacío!");
-            return null;
-        }
-
-        int indice = new Random().nextInt(cartasSuerte.size());
-        return cartasSuerte.remove(indice);
-    }
-
-
-    public CartaComunidad_MartinArayaGaete_217813697 extraerCartaComunidad() {
-        List<CartaComunidad_MartinArayaGaete_217813697> cartasComunidad = tablero.getCartasComunidad();
-        if (cartasComunidad.isEmpty()) {
-            System.out.println("¡El mazo de cartas de Comunidad está vacío!");
-            return null;
-        }
-
-        int indice = new Random().nextInt(cartasComunidad.size());
-        return cartasComunidad.remove(indice);
-    }
 
     // RF24. (0.1 pts) Verificar bancarrota. Verificar si un jugador se encuentra en bancarrota (sin dinero).
     public boolean verificarBancarrota(Jugador_MartinArayaGaete_217813697 jugador) {

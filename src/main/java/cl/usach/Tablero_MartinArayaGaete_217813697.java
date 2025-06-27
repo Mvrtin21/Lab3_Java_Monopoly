@@ -2,6 +2,7 @@ package cl.usach;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Representa el tablero de juego en CAPITALIA.
@@ -68,4 +69,30 @@ public class Tablero_MartinArayaGaete_217813697 {
     public void setCartasComunidad(List<CartaComunidad_MartinArayaGaete_217813697> cartasComunidad) {
         this.cartasComunidad = cartasComunidad;
     }
+
+    // RF23. (0.2 pts) Extraer Carta. Extraer una carta del mazo.
+    public CartaSuerte_MartinArayaGaete_217813697 extraerCartaSuerte() {
+        List<CartaSuerte_MartinArayaGaete_217813697> cartasSuerte = tablero.getCartasSuerte();
+        if (cartasSuerte.isEmpty()) {
+            System.out.println("¡El mazo de cartas de Suerte está vacío!");
+            return null;
+        }
+
+        int indice = new Random().nextInt(cartasSuerte.size());
+        return cartasSuerte.remove(indice);
+    }
+
+
+    public CartaComunidad_MartinArayaGaete_217813697 extraerCartaComunidad() {
+        List<CartaComunidad_MartinArayaGaete_217813697> cartasComunidad = tablero.getCartasComunidad();
+        if (cartasComunidad.isEmpty()) {
+            System.out.println("¡El mazo de cartas de Comunidad está vacío!");
+            return null;
+        }
+
+        int indice = new Random().nextInt(cartasComunidad.size());
+        return cartasComunidad.remove(indice);
+    }
+
+
 }
