@@ -10,14 +10,21 @@ public class Main_MartinArayaGaete_217813697 {
 
         while (ejecutando) {
             System.out.println("\n### CAPITALIA - Menú Principal ###");
-            System.out.println("1. Crear nueva partida");
-            System.out.println("2. Visualizar estado actual del juego");
-            System.out.println("3. Jugar turno");
-            System.out.println("4. Construir casa");
-            System.out.println("5. Construir hotel");
-            System.out.println("6. Hipotecar propiedad");
-            System.out.println("7. Deshipotecar propiedad");
-            System.out.println("8. Salir");
+            if (juego == null) {
+                // Solo opciones disponibles antes de crear partida
+                System.out.println("1. Crear nueva partida");
+                System.out.println("8. Salir");
+            } else {
+                // Menú completo cuando ya hay partida creada
+                System.out.println("1. Crear nueva partida");
+                System.out.println("2. Visualizar estado actual del juego");
+                System.out.println("3. Jugar turno");
+                System.out.println("4. Construir casa");
+                System.out.println("5. Construir hotel");
+                System.out.println("6. Hipotecar propiedad");
+                System.out.println("7. Deshipotecar propiedad");
+                System.out.println("8. Salir");
+            }
             System.out.print("Seleccione opción: ");
 
             int opcion;
@@ -105,20 +112,20 @@ public class Main_MartinArayaGaete_217813697 {
                         System.out.print("ID propiedad: ");
                         int idPh = Integer.parseInt(sc.nextLine());
 
-
-
-                        Jugador_MartinArayaGaete_217813697 jugC = null;
+                        Jugador_MartinArayaGaete_217813697 jugH = null;
                         for (Jugador_MartinArayaGaete_217813697 j : juego.getJugadores()) {
                             if (j.getId() == idJh) {
-                                jugC = j;
+                                jugH = j;
                                 break;
                             }
                         }
-
-                        // No necesitas buscar jugador porque hotel no depende de él en tu lógica
-                        Propiedad_MartinArayaGaete_217813697 propH =
-                                juego.getTablero().getPropiedades().get(idPh);
-                        juego.construirHotel(jugC, propH);
+                        if (jugH != null) {
+                            Propiedad_MartinArayaGaete_217813697 propH =
+                                    juego.getTablero().getPropiedades().get(idPh);
+                            juego.construirHotel(jugH, propH);
+                        } else {
+                            System.out.println("Jugador no encontrado.");
+                        }
                     }
                     break;
 

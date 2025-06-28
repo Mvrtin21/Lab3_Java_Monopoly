@@ -71,28 +71,30 @@ public class Tablero_MartinArayaGaete_217813697 {
     }
 
     // RF23. (0.2 pts) Extraer Carta. Extraer una carta del mazo.
+    /**
+     * Extrae una carta de Suerte aleatoria del mazo, la elimina y la retorna.
+     * @return La CartaSuerte extraída, o null si el mazo está vacío.
+     */
     public CartaSuerte_MartinArayaGaete_217813697 extraerCartaSuerte() {
-        List<CartaSuerte_MartinArayaGaete_217813697> cartasSuerte = tablero.getCartasSuerte();
-        if (cartasSuerte.isEmpty()) {
+        if (cartasSuerte == null || cartasSuerte.isEmpty()) {
             System.out.println("¡El mazo de cartas de Suerte está vacío!");
             return null;
         }
-
         int indice = new Random().nextInt(cartasSuerte.size());
         return cartasSuerte.remove(indice);
     }
 
-
+    /**
+     * Extrae una carta de Comunidad aleatoria del mazo, la elimina y la retorna.
+     * @return La CartaComunidad extraída, o null si el mazo está vacío.
+     */
     public CartaComunidad_MartinArayaGaete_217813697 extraerCartaComunidad() {
-        List<CartaComunidad_MartinArayaGaete_217813697> cartasComunidad = tablero.getCartasComunidad();
-        if (cartasComunidad.isEmpty()) {
+        if (cartasComunidad == null || cartasComunidad.isEmpty()) {
             System.out.println("¡El mazo de cartas de Comunidad está vacío!");
             return null;
         }
-
         int indice = new Random().nextInt(cartasComunidad.size());
         return cartasComunidad.remove(indice);
     }
-
 
 }
