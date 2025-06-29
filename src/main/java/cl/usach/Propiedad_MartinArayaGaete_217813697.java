@@ -15,31 +15,31 @@ public class Propiedad_MartinArayaGaete_217813697 {
     private Jugador_MartinArayaGaete_217813697 dueño;
     private int casas;
 
-
-
     // nuevo
     private String tipo;
     // se espera: "Propiedad", "Impuesto", "Suerte", "Comunidad", "Carcel", "Salida", etc...
 
-
     private boolean esHotel;
     private boolean estaHipotecada;
 
-    public Propiedad_MartinArayaGaete_217813697(int id, String nombre, int precio, int renta, Jugador_MartinArayaGaete_217813697 dueño) {
+    public Propiedad_MartinArayaGaete_217813697(
+            int id, String nombre, int precio, int renta,
+            Jugador_MartinArayaGaete_217813697 dueño,
+            String tipo) {
         this.id = id;
         this.nombre = Objects.requireNonNull(nombre, "El nombre no puede ser null");
         this.precio = precio;
         this.renta = renta;
         this.dueño = dueño;
         this.casas = 0;
+        this.esHotel = false;
         this.estaHipotecada = false;
-        this.tipo = tipo;
+        this.tipo = Objects.requireNonNull(tipo, "tipo no puede ser null");
     }
-
     @Override
     public String toString() {
         return "[" + id + "] " + nombre + " (" + tipo + ") - Precio: $" + precio
-                + ", Renta: $" + renta + ", Dueño: "
+                + ", Renta: $" + renta + ", EsHotel?: $" + esHotel +", Dueño: "
                 + (dueño != null ? dueño.getNombre() : "ninguno");
     }
 

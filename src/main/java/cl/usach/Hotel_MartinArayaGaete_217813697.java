@@ -6,8 +6,14 @@ package cl.usach;
  */
 public class Hotel_MartinArayaGaete_217813697 extends Propiedad_MartinArayaGaete_217813697 {
 
-    public Hotel_MartinArayaGaete_217813697(int id, String nombre, int precio, int renta, Jugador_MartinArayaGaete_217813697 dueño) {
-        super(id, nombre, precio, renta, dueño);
+    public Hotel_MartinArayaGaete_217813697(
+            int id,
+            String nombre,
+            int precio,
+            int renta,
+            Jugador_MartinArayaGaete_217813697 dueño) {
+        // Ahora invocamos el constructor de Propiedad que recibe el 'tipo'
+        super(id, nombre, precio, renta, dueño, "Hotel");
         // Un Hotel reemplaza todas las casas: ponemos casas a 0
         setCasas(0);
     }

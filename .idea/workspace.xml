@@ -6,7 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="eeebd243-57a7-4676-a7c3-d2fa7d7797f4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cl/usach/CartaComunidad_MartinArayaGaete_217813697.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/usach/CartaComunidad_MartinArayaGaete_217813697.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cl/usach/CartaSuerte_MartinArayaGaete_217813697.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/usach/CartaSuerte_MartinArayaGaete_217813697.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cl/usach/Hotel_MartinArayaGaete_217813697.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/usach/Hotel_MartinArayaGaete_217813697.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cl/usach/Juego_MartinArayaGaete_217813697.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/usach/Juego_MartinArayaGaete_217813697.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cl/usach/Jugador_MartinArayaGaete_217813697.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/usach/Jugador_MartinArayaGaete_217813697.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cl/usach/Main_MartinArayaGaete_217813697.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/usach/Main_MartinArayaGaete_217813697.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cl/usach/Propiedad_MartinArayaGaete_217813697.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/usach/Propiedad_MartinArayaGaete_217813697.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cl/usach/Tablero_MartinArayaGaete_217813697.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/usach/Tablero_MartinArayaGaete_217813697.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,7 +116,8 @@
       <workItem from="1750906687635" duration="2026000" />
       <workItem from="1750990018013" duration="1621000" />
       <workItem from="1751067791457" duration="3280000" />
-      <workItem from="1751078303202" duration="1449000" />
+      <workItem from="1751078303202" duration="2660000" />
+      <workItem from="1751130822815" duration="15957000" />
     </task>
     <servers />
   </component>
@@ -124,6 +131,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
           <line>13</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/cl/usach/Juego_MartinArayaGaete_217813697.java</url>
+          <line>257</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

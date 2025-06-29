@@ -1,5 +1,6 @@
 package cl.usach;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Main_MartinArayaGaete_217813697 {
@@ -11,11 +12,9 @@ public class Main_MartinArayaGaete_217813697 {
         while (ejecutando) {
             System.out.println("\n### CAPITALIA - Menú Principal ###");
             if (juego == null) {
-                // Solo opciones disponibles antes de crear partida
                 System.out.println("1. Crear nueva partida");
                 System.out.println("8. Salir");
             } else {
-                // Menú completo cuando ya hay partida creada
                 System.out.println("1. Crear nueva partida");
                 System.out.println("2. Visualizar estado actual del juego");
                 System.out.println("3. Jugar turno");
@@ -29,164 +28,49 @@ public class Main_MartinArayaGaete_217813697 {
 
             int opcion;
             try {
-                opcion = Integer.parseInt(sc.nextLine());
+                opcion = Integer.parseInt(sc.nextLine().trim());
             } catch (NumberFormatException e) {
                 System.out.println("Entrada inválida.");
                 continue;
             }
 
+            if (opcion == 1) {
+                System.out.println("\n--- Creando nueva partida ---");
+                juego = Juego_MartinArayaGaete_217813697.crearPartida(sc);
+                continue;
+            }
+
+            if (juego == null) {
+                System.out.println("Primero crea una partida.");
+                continue;
+            }
+
             switch (opcion) {
-                case 1:
-                    // 1. Crear partida
-                    System.out.println("\n--- Creando nueva partida ---");
-                    juego = new Juego_MartinArayaGaete_217813697();
-
-                    System.out.print("¿Cuántos jugadores? (mínimo 2): ");
-                    int nJug = Integer.parseInt(sc.nextLine());
-                    for (int i = 1; i <= nJug; i++) {
-                        System.out.print("Nombre jugador " + i + ": ");
-                        String nombre = sc.nextLine();
-                        juego.agregarJugador(nombre, i);
-                    }
-
-                    System.out.print("¿Cuántos dados por turno? (1-4): ");
-                    int dados = Integer.parseInt(sc.nextLine());
-                    juego.setNumeroDados(dados);
-
-                    System.out.println("Partida creada. ¡A jugar!");
-                    break;
-
                 case 2:
-                    // 2. Mostrar estado
-                    if (juego == null) {
-                        System.out.println("Primero crea una partida.");
-                    } else {
-                        System.out.println(juego);
-                    }
+                    System.out.println(juego);
                     break;
 
                 case 3:
-                    // 3. Jugar turno completo
-                    if (juego == null) {
-                        System.out.println("Primero crea una partida.");
-                    } else {
-                        juego.jugarTurno(sc);
-                    }
+                    juego.jugarTurno(sc);
                     break;
 
                 case 4:
-                    // 4. Construir casa
-                    if (juego == null) {
-                        System.out.println("Primero crea una partida.");
-                    } else {
-                        System.out.print("ID jugador: ");
-                        int idJc = Integer.parseInt(sc.nextLine());
-                        System.out.print("ID propiedad: ");
-                        int idPc = Integer.parseInt(sc.nextLine());
-
-                        Jugador_MartinArayaGaete_217813697 jugC = null;
-                        for (Jugador_MartinArayaGaete_217813697 j : juego.getJugadores()) {
-                            if (j.getId() == idJc) {
-                                jugC = j;
-                                break;
-                            }
-                        }
-
-                        if (jugC != null) {
-                            Propiedad_MartinArayaGaete_217813697 propC =
-                                    juego.getTablero().getPropiedades().get(idPc);
-                            juego.construirCasa(jugC, propC);
-                        } else {
-                            System.out.println("Jugador no encontrado.");
-                        }
-                    }
+                    gestionarPropiedad(sc, juego, Accion.CONSTRUIR_CASA);
                     break;
 
                 case 5:
-                    // 5. Construir hotel
-                    if (juego == null) {
-                        System.out.println("Primero crea una partida.");
-                    } else {
-                        System.out.print("ID jugador: ");
-                        int idJh = Integer.parseInt(sc.nextLine());
-                        System.out.print("ID propiedad: ");
-                        int idPh = Integer.parseInt(sc.nextLine());
-
-                        Jugador_MartinArayaGaete_217813697 jugH = null;
-                        for (Jugador_MartinArayaGaete_217813697 j : juego.getJugadores()) {
-                            if (j.getId() == idJh) {
-                                jugH = j;
-                                break;
-                            }
-                        }
-                        if (jugH != null) {
-                            Propiedad_MartinArayaGaete_217813697 propH =
-                                    juego.getTablero().getPropiedades().get(idPh);
-                            juego.construirHotel(jugH, propH);
-                        } else {
-                            System.out.println("Jugador no encontrado.");
-                        }
-                    }
+                    gestionarPropiedad(sc, juego, Accion.CONSTRUIR_HOTEL);
                     break;
 
                 case 6:
-                    // 6. Hipotecar propiedad
-                    if (juego == null) {
-                        System.out.println("Primero crea una partida.");
-                    } else {
-                        System.out.print("ID jugador: ");
-                        int idJhip = Integer.parseInt(sc.nextLine());
-                        System.out.print("ID propiedad: ");
-                        int idPhip = Integer.parseInt(sc.nextLine());
-
-                        Jugador_MartinArayaGaete_217813697 jugHip = null;
-                        for (Jugador_MartinArayaGaete_217813697 j : juego.getJugadores()) {
-                            if (j.getId() == idJhip) {
-                                jugHip = j;
-                                break;
-                            }
-                        }
-
-                        if (jugHip != null) {
-                            Propiedad_MartinArayaGaete_217813697 propHip =
-                                    juego.getTablero().getPropiedades().get(idPhip);
-                            juego.hipotecarPropiedad(jugHip, propHip);
-                        } else {
-                            System.out.println("Jugador no encontrado.");
-                        }
-                    }
+                    gestionarPropiedad(sc, juego, Accion.HIPOTECAR);
                     break;
 
                 case 7:
-                    // 7. Deshipotecar propiedad
-                    if (juego == null) {
-                        System.out.println("Primero crea una partida.");
-                    } else {
-                        System.out.print("ID jugador: ");
-                        int idJdes = Integer.parseInt(sc.nextLine());
-                        System.out.print("ID propiedad: ");
-                        int idPdes = Integer.parseInt(sc.nextLine());
-
-                        Jugador_MartinArayaGaete_217813697 jugDes = null;
-                        for (Jugador_MartinArayaGaete_217813697 j : juego.getJugadores()) {
-                            if (j.getId() == idJdes) {
-                                jugDes = j;
-                                break;
-                            }
-                        }
-
-                        if (jugDes != null) {
-                            Propiedad_MartinArayaGaete_217813697 propDes =
-                                    juego.getTablero().getPropiedades().get(idPdes);
-                            juego.deshipotecarPropiedad(jugDes, propDes);
-                        } else {
-                            System.out.println("Jugador no encontrado.");
-                        }
-                    }
+                    gestionarPropiedad(sc, juego, Accion.DESHIPOTECAR);
                     break;
 
                 case 8:
-                    // 8. Salir
                     System.out.println("¡Gracias por jugar CAPITALIA!");
                     ejecutando = false;
                     break;
@@ -196,5 +80,66 @@ public class Main_MartinArayaGaete_217813697 {
             }
         }
         sc.close();
+    }
+
+    private static void gestionarPropiedad(Scanner sc, Juego_MartinArayaGaete_217813697 juego, Accion accion) {
+        // Mostrar jugadores
+        System.out.println("\nJugadores disponibles:");
+        juego.getJugadores().forEach(j ->
+                System.out.println(j.getId() + ". " + j.getNombre())
+        );
+        System.out.print("Selecciona ID de jugador: ");
+        int idJugador = Integer.parseInt(sc.nextLine().trim());
+        Jugador_MartinArayaGaete_217813697 jugador = juego.getJugadores().stream()
+                .filter(j -> j.getId() == idJugador).findFirst().orElse(null);
+        if (jugador == null) {
+            System.out.println("Jugador no encontrado.");
+            return;
+        }
+
+        // Mostrar propiedades del jugador
+        List<Propiedad_MartinArayaGaete_217813697> props = jugador.getPropiedades();
+        if (props.isEmpty()) {
+            System.out.println("Este jugador no posee propiedades.");
+            return;
+        }
+        System.out.println("\nPropiedades de " + jugador.getNombre() + ":");
+        props.forEach(p -> {
+            System.out.println(p.getId() + ". " + p.getNombre()
+                    + " (Precio: $" + p.getPrecio() + ", Renta: $" + p.getRenta()
+                    + ", Casas: " + p.getCasas()
+                    + ", Hipotecada: " + p.isEstaHipotecada() + ")");
+        });
+        System.out.print("Selecciona ID de propiedad: ");
+        int idProp = Integer.parseInt(sc.nextLine().trim());
+        Propiedad_MartinArayaGaete_217813697 propiedad = props.stream()
+                .filter(p -> p.getId() == idProp).findFirst().orElse(null);
+        if (propiedad == null) {
+            System.out.println("Propiedad no encontrada.");
+            return;
+        }
+
+        // Ejecutar acción
+        switch (accion) {
+            case CONSTRUIR_CASA:
+                juego.construirCasa(jugador, propiedad);
+                break;
+            case CONSTRUIR_HOTEL:
+                juego.construirHotel(jugador, propiedad);
+                break;
+            case HIPOTECAR:
+                juego.hipotecarPropiedad(jugador, propiedad);
+                break;
+            case DESHIPOTECAR:
+                juego.deshipotecarPropiedad(jugador, propiedad);
+                break;
+        }
+    }
+
+    private enum Accion {
+        CONSTRUIR_CASA,
+        CONSTRUIR_HOTEL,
+        HIPOTECAR,
+        DESHIPOTECAR
     }
 }

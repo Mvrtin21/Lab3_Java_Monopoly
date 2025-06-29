@@ -37,8 +37,27 @@ public class CartaComunidad_MartinArayaGaete_217813697 extends Carta_MartinAraya
 
     @Override
     public void ejecutarAccion(Juego_MartinArayaGaete_217813697 juego) {
-        // Implementación básica: muestra la acción.
+        Jugador_MartinArayaGaete_217813697 jugador = juego.getJugadores().get(juego.getTurnoActual());
         System.out.println("[Carta Comunidad] " + getDescripcion() + ": " + accion);
-        // Aquí podrías parsear 'accion' y modificar el estado del juego.
+
+        if (accion.startsWith("PAGA")) {
+            int monto = Integer.parseInt(accion.split(" ")[1]);
+            jugador.decrementarDinero(monto);
+            System.out.println(jugador.getNombre() + " pagó $" + monto + ".");
+        } else if (accion.startsWith("RECIBE")) {
+            int monto = Integer.parseInt(accion.split(" ")[1]);
+            jugador.pagaDinero(monto);
+            System.out.println(jugador.getNombre() + " recibió $" + monto + ".");
+        } else if (accion.startsWith("AVANZA")) {
+            int pasos = Integer.parseInt(accion.split(" ")[1]);
+            juego.moverJugador(jugador.getId(), pasos);
+            System.out.println(jugador.getNombre() + " avanza " + pasos + " casillas.");
+            // Procesar casilla destino si quieres
+        } else if (accion.equals("CARCEL")) {
+            jugador.setEstaEnCarcel(true);
+            System.out.println(jugador.getNombre() + " ha sido enviado a la cárcel.");
+        } else {
+            System.out.println("Acción desconocida: " + accion);
+        }
     }
 }

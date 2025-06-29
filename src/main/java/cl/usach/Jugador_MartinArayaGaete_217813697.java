@@ -17,10 +17,10 @@ public class Jugador_MartinArayaGaete_217813697 {
     private int totalCartasSalirCarcel;
     private int contadorCarcel;
 
-    public Jugador_MartinArayaGaete_217813697(int id, String nombre, int dinero) {
+    public Jugador_MartinArayaGaete_217813697(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;
-        this.dinero = dinero;
+        this.dinero = 1500;
         this.propiedades = new ArrayList<>();
         this.posicionActual = 0; // Salida
         this.estaEnCarcel = false;
@@ -59,9 +59,52 @@ public class Jugador_MartinArayaGaete_217813697 {
 
     @Override
     public String toString() {
-        return String.format(
-                "Jugador[id=%d, nombre=%s, dinero=%d, posicion=%d, enCarcel=%b, cartasSalirCarcel=%d, numPropiedades=%d]",
-                id, nombre, dinero, posicionActual, estaEnCarcel, totalCartasSalirCarcel, propiedades.size()
-        );
+        StringBuilder sb = new StringBuilder();
+        sb.append(String.format(
+                "Jugador[id=%d, nombre=%s, dinero=%d, posicion=%d, enCarcel=%b, cartasSalirCarcel=%d]%n",
+                id, nombre, dinero, posicionActual, estaEnCarcel, totalCartasSalirCarcel
+        ));
+        sb.append("Propiedades del jugador:\n");
+        if (propiedades.isEmpty()) {
+            sb.append("  (ninguna)\n");
+        } else {
+            for (Propiedad_MartinArayaGaete_217813697 prop : propiedades) {
+                sb.append("  - ").append(prop.toString()).append("\n");
+            }
+        }
+        return sb.toString();
     }
+
+
+
+    public void decrementarDinero(int monto) {
+        if (monto < 0) {
+            System.out.println("Error: No puedes decrementar un monto negativo.");
+            return;
+        }
+        this.dinero -= monto;
+        System.out.println(nombre + " ha pagado $" + monto + ". Dinero restante: $" + this.dinero);
+
+        if (this.dinero < 0) {
+            System.out.println(nombre + " está en bancarrota.");
+            // Aquí podrías implementar la lógica para eliminar al jugador o traspasar sus propiedades
+        }
+    }
+
+    public void pagaDinero(int monto) {
+        this.dinero -= monto;
+        System.out.println(nombre + (monto >= 0 ? " pagó $" + monto : " recibió $" + (-monto)) + ".");
+    }
+
+    /**
+     * Disminuye en 1 el contador de cartas “Salir de la cárcel”.
+     * Asegúrate de que totalCartasSalirCarcel nunca sea negativo.
+     */
+    public void decrementarCartaSalirCarcel() {
+        if (this.totalCartasSalirCarcel > 0) {
+            this.totalCartasSalirCarcel--;
+        }
+    }
+
+
 }

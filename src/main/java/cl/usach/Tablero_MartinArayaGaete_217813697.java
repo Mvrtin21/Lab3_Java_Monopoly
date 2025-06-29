@@ -97,4 +97,13 @@ public class Tablero_MartinArayaGaete_217813697 {
         return cartasComunidad.remove(indice);
     }
 
+    public int getIndiceCarcel() {
+        for (int i = 0; i < propiedades.size(); i++) {
+            if ("Carcel".equals(propiedades.get(i).getTipo())) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
 }
