@@ -75,8 +75,6 @@ public class Jugador_MartinArayaGaete_217813697 {
         return sb.toString();
     }
 
-
-
     public void decrementarDinero(int monto) {
         if (monto < 0) {
             System.out.println("Error: No puedes decrementar un monto negativo.");

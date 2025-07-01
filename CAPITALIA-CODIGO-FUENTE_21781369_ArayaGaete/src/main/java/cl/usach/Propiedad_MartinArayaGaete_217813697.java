@@ -39,7 +39,7 @@ public class Propiedad_MartinArayaGaete_217813697 {
     @Override
     public String toString() {
         return "[" + id + "] " + nombre + " (" + tipo + ") - Precio: $" + precio
-                + ", Renta: $" + renta + ", EsHotel?: $" + esHotel +", Dueño: "
+                + ", Renta: $" + renta + ", casas: " + casas + ", EsHotel?: $" + esHotel + ", Dueño: "
                 + (dueño != null ? dueño.getNombre() : "ninguno");
     }
 

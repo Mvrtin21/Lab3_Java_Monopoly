@@ -70,10 +70,14 @@ public class Tablero_MartinArayaGaete_217813697 {
         this.cartasComunidad = cartasComunidad;
     }
 
-    // RF23. (0.2 pts) Extraer Carta. Extraer una carta del mazo.
     /**
-     * Extrae una carta de Suerte aleatoria del mazo, la elimina y la retorna.
-     * @return La CartaSuerte extraída, o null si el mazo está vacío.
+     * RF23. (0.2 pts) Extraer Carta de Suerte.
+     *
+     * Este método selecciona aleatoriamente una carta del mazo de Suerte,
+     * la elimina del mazo y la retorna. Si el mazo está vacío, retorna null
+     * y muestra un mensaje informativo.
+     *
+     * @return la carta de Suerte extraída, o null si el mazo está vacío
      */
     public CartaSuerte_MartinArayaGaete_217813697 extraerCartaSuerte() {
         if (cartasSuerte == null || cartasSuerte.isEmpty()) {
@@ -85,8 +89,13 @@ public class Tablero_MartinArayaGaete_217813697 {
     }
 
     /**
-     * Extrae una carta de Comunidad aleatoria del mazo, la elimina y la retorna.
-     * @return La CartaComunidad extraída, o null si el mazo está vacío.
+     * RF23. (0.2 pts) Extraer Carta de Comunidad.
+     *
+     * Este método selecciona aleatoriamente una carta del mazo de Comunidad,
+     * la elimina del mazo y la retorna. Si el mazo está vacío, retorna null
+     * y muestra un mensaje informativo.
+     *
+     * @return la carta de Comunidad extraída, o null si el mazo está vacío
      */
     public CartaComunidad_MartinArayaGaete_217813697 extraerCartaComunidad() {
         if (cartasComunidad == null || cartasComunidad.isEmpty()) {

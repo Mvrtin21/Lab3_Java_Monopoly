@@ -1,0 +1,591 @@
+{
+  "jugadores": [
+    {
+      "id": 1,
+      "nombre": "martin",
+      "dinero": 1920,
+      "propiedades": [],
+      "posicionActual": 5,
+      "estaEnCarcel": false,
+      "totalCartasSalirCarcel": 0,
+      "contadorCarcel": 0
+    },
+    {
+      "id": 2,
+      "nombre": "araya",
+      "dinero": 1400,
+      "propiedades": [],
+      "posicionActual": 23,
+      "estaEnCarcel": false,
+      "totalCartasSalirCarcel": 0,
+      "contadorCarcel": 0
+    }
+  ],
+  "tablero": {
+    "propiedades": [
+      {
+        "id": 0,
+        "nombre": "Salida",
+        "precio": 0,
+        "renta": 0,
+        "dueño": {
+          "id": -1,
+          "nombre": "Sistema",
+          "dinero": 1500,
+          "propiedades": [],
+          "posicionActual": 0,
+          "estaEnCarcel": false,
+          "totalCartasSalirCarcel": 0,
+          "contadorCarcel": 0
+        },
+        "casas": 0,
+        "tipo": "Salida",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 1,
+        "nombre": "Providencia",
+        "precio": 200,
+        "renta": 20,
+        "casas": 0,
+        "tipo": "Propiedad",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 2,
+        "nombre": "Las Condes",
+        "precio": 250,
+        "renta": 25,
+        "casas": 0,
+        "tipo": "Propiedad",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 3,
+        "nombre": "Ñuñoa",
+        "precio": 300,
+        "renta": 30,
+        "casas": 0,
+        "tipo": "Propiedad",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 4,
+        "nombre": "Comunidad",
+        "precio": 0,
+        "renta": 0,
+        "dueño": {
+          "id": -1,
+          "nombre": "Sistema",
+          "dinero": 1500,
+          "propiedades": [],
+          "posicionActual": 0,
+          "estaEnCarcel": false,
+          "totalCartasSalirCarcel": 0,
+          "contadorCarcel": 0
+        },
+        "casas": 0,
+        "tipo": "Comunidad",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 5,
+        "nombre": "Suerte",
+        "precio": 0,
+        "renta": 0,
+        "dueño": {
+          "id": -1,
+          "nombre": "Sistema",
+          "dinero": 1500,
+          "propiedades": [],
+          "posicionActual": 0,
+          "estaEnCarcel": false,
+          "totalCartasSalirCarcel": 0,
+          "contadorCarcel": 0
+        },
+        "casas": 0,
+        "tipo": "Suerte",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 6,
+        "nombre": "Santiago Centro",
+        "precio": 350,
+        "renta": 35,
+        "casas": 0,
+        "tipo": "Propiedad",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 7,
+        "nombre": "Vitacura",
+        "precio": 400,
+        "renta": 40,
+        "casas": 0,
+        "tipo": "Propiedad",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 8,
+        "nombre": "La Reina",
+        "precio": 450,
+        "renta": 45,
+        "casas": 0,
+        "tipo": "Propiedad",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 9,
+        "nombre": "Comunidad",
+        "precio": 0,
+        "renta": 0,
+        "dueño": {
+          "id": -1,
+          "nombre": "Sistema",
+          "dinero": 1500,
+          "propiedades": [],
+          "posicionActual": 0,
+          "estaEnCarcel": false,
+          "totalCartasSalirCarcel": 0,
+          "contadorCarcel": 0
+        },
+        "casas": 0,
+        "tipo": "Comunidad",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 10,
+        "nombre": "Macul",
+        "precio": 500,
+        "renta": 50,
+        "casas": 0,
+        "tipo": "Propiedad",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 11,
+        "nombre": "Suerte",
+        "precio": 0,
+        "renta": 0,
+        "dueño": {
+          "id": -1,
+          "nombre": "Sistema",
+          "dinero": 1500,
+          "propiedades": [],
+          "posicionActual": 0,
+          "estaEnCarcel": false,
+          "totalCartasSalirCarcel": 0,
+          "contadorCarcel": 0
+        },
+        "casas": 0,
+        "tipo": "Suerte",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 12,
+        "nombre": "Peñalolén",
+        "precio": 550,
+        "renta": 55,
+        "casas": 0,
+        "tipo": "Propiedad",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 13,
+        "nombre": "La Florida",
+        "precio": 600,
+        "renta": 60,
+        "casas": 0,
+        "tipo": "Propiedad",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 14,
+        "nombre": "Comunidad",
+        "precio": 0,
+        "renta": 0,
+        "dueño": {
+          "id": -1,
+          "nombre": "Sistema",
+          "dinero": 1500,
+          "propiedades": [],
+          "posicionActual": 0,
+          "estaEnCarcel": false,
+          "totalCartasSalirCarcel": 0,
+          "contadorCarcel": 0
+        },
+        "casas": 0,
+        "tipo": "Comunidad",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 15,
+        "nombre": "Maipú",
+        "precio": 650,
+        "renta": 65,
+        "casas": 0,
+        "tipo": "Propiedad",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 16,
+        "nombre": "Puente Alto",
+        "precio": 700,
+        "renta": 70,
+        "casas": 0,
+        "tipo": "Propiedad",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 17,
+        "nombre": "Suerte",
+        "precio": 0,
+        "renta": 0,
+        "dueño": {
+          "id": -1,
+          "nombre": "Sistema",
+          "dinero": 1500,
+          "propiedades": [],
+          "posicionActual": 0,
+          "estaEnCarcel": false,
+          "totalCartasSalirCarcel": 0,
+          "contadorCarcel": 0
+        },
+        "casas": 0,
+        "tipo": "Suerte",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 18,
+        "nombre": "Recoleta",
+        "precio": 750,
+        "renta": 75,
+        "casas": 0,
+        "tipo": "Propiedad",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 19,
+        "nombre": "Comunidad",
+        "precio": 0,
+        "renta": 0,
+        "dueño": {
+          "id": -1,
+          "nombre": "Sistema",
+          "dinero": 1500,
+          "propiedades": [],
+          "posicionActual": 0,
+          "estaEnCarcel": false,
+          "totalCartasSalirCarcel": 0,
+          "contadorCarcel": 0
+        },
+        "casas": 0,
+        "tipo": "Comunidad",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 20,
+        "nombre": "Cerrillos",
+        "precio": 800,
+        "renta": 80,
+        "casas": 0,
+        "tipo": "Propiedad",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 21,
+        "nombre": "Lo Barnechea",
+        "precio": 850,
+        "renta": 85,
+        "casas": 0,
+        "tipo": "Propiedad",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 22,
+        "nombre": "Independencia",
+        "precio": 900,
+        "renta": 90,
+        "casas": 0,
+        "tipo": "Propiedad",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 23,
+        "nombre": "Comunidad",
+        "precio": 0,
+        "renta": 0,
+        "dueño": {
+          "id": -1,
+          "nombre": "Sistema",
+          "dinero": 1500,
+          "propiedades": [],
+          "posicionActual": 0,
+          "estaEnCarcel": false,
+          "totalCartasSalirCarcel": 0,
+          "contadorCarcel": 0
+        },
+        "casas": 0,
+        "tipo": "Comunidad",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 24,
+        "nombre": "Suerte",
+        "precio": 0,
+        "renta": 0,
+        "dueño": {
+          "id": -1,
+          "nombre": "Sistema",
+          "dinero": 1500,
+          "propiedades": [],
+          "posicionActual": 0,
+          "estaEnCarcel": false,
+          "totalCartasSalirCarcel": 0,
+          "contadorCarcel": 0
+        },
+        "casas": 0,
+        "tipo": "Suerte",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 25,
+        "nombre": "Cárcel",
+        "precio": 0,
+        "renta": 0,
+        "dueño": {
+          "id": -1,
+          "nombre": "Sistema",
+          "dinero": 1500,
+          "propiedades": [],
+          "posicionActual": 0,
+          "estaEnCarcel": false,
+          "totalCartasSalirCarcel": 0,
+          "contadorCarcel": 0
+        },
+        "casas": 0,
+        "tipo": "Carcel",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 26,
+        "nombre": "Vas a la Cárcel",
+        "precio": 0,
+        "renta": 0,
+        "dueño": {
+          "id": -1,
+          "nombre": "Sistema",
+          "dinero": 1500,
+          "propiedades": [],
+          "posicionActual": 0,
+          "estaEnCarcel": false,
+          "totalCartasSalirCarcel": 0,
+          "contadorCarcel": 0
+        },
+        "casas": 0,
+        "tipo": "Carcel",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 27,
+        "nombre": "Estacionamiento Libre",
+        "precio": 0,
+        "renta": 0,
+        "dueño": {
+          "id": -1,
+          "nombre": "Sistema",
+          "dinero": 1500,
+          "propiedades": [],
+          "posicionActual": 0,
+          "estaEnCarcel": false,
+          "totalCartasSalirCarcel": 0,
+          "contadorCarcel": 0
+        },
+        "casas": 0,
+        "tipo": "Estacionamiento",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 28,
+        "nombre": "Impuesto Municipal",
+        "precio": 0,
+        "renta": 300,
+        "dueño": {
+          "id": -1,
+          "nombre": "Sistema",
+          "dinero": 1500,
+          "propiedades": [],
+          "posicionActual": 0,
+          "estaEnCarcel": false,
+          "totalCartasSalirCarcel": 0,
+          "contadorCarcel": 0
+        },
+        "casas": 0,
+        "tipo": "Impuesto",
+        "esHotel": false,
+        "estaHipotecada": false
+      },
+      {
+        "id": 29,
+        "nombre": "Impuesto Verde",
+        "precio": 0,
+        "renta": 500,
+        "dueño": {
+          "id": -1,
+          "nombre": "Sistema",
+          "dinero": 1500,
+          "propiedades": [],
+          "posicionActual": 0,
+          "estaEnCarcel": false,
+          "totalCartasSalirCarcel": 0,
+          "contadorCarcel": 0
+        },
+        "casas": 0,
+        "tipo": "Impuesto",
+        "esHotel": false,
+        "estaHipotecada": false
+      }
+    ],
+    "cartasSuerte": [
+      {
+        "tipo": "Suerte",
+        "accion": "RECIBE 200",
+        "id": 1,
+        "descripcion": "Es tu cumpleaños en Santiago!"
+      },
+      {
+        "tipo": "Suerte",
+        "accion": "PAGA 100",
+        "id": 2,
+        "descripcion": "Caos en la Costanera Norte"
+      },
+      {
+        "tipo": "Suerte",
+        "accion": "PAGA 50",
+        "id": 3,
+        "descripcion": "Se cortó la luz en Providencia"
+      },
+      {
+        "tipo": "Suerte",
+        "accion": "PAGA 150",
+        "id": 4,
+        "descripcion": "Te gana la micro: llegas tarde"
+      },
+      {
+        "tipo": "Suerte",
+        "accion": "RECIBE 100",
+        "id": 5,
+        "descripcion": "Encuentras luca en el suelo"
+      },
+      {
+        "tipo": "Suerte",
+        "accion": "PAGA 120",
+        "id": 6,
+        "descripcion": "Tienes que pagar el TAG"
+      },
+      {
+        "tipo": "Suerte",
+        "accion": "PAGA 200",
+        "id": 9,
+        "descripcion": "Multa por mal estacionarte"
+      },
+      {
+        "tipo": "Suerte",
+        "accion": "PAGA 70",
+        "id": 10,
+        "descripcion": "Te traga bus sin vuelto"
+      }
+    ],
+    "cartasComunidad": [
+      {
+        "tipo": "Comunidad",
+        "accion": "PAGA 100",
+        "id": 1,
+        "descripcion": "Te secuestra un venezolano! Piden 100$ por tu rescate"
+      },
+      {
+        "tipo": "Comunidad",
+        "accion": "RECIBE 300",
+        "id": 2,
+        "descripcion": "Recibe subvención estatal"
+      },
+      {
+        "tipo": "Comunidad",
+        "accion": "AVANZA 3",
+        "id": 3,
+        "descripcion": "Inauguraron Metro de Rancagua"
+      },
+      {
+        "tipo": "Comunidad",
+        "accion": "PAGA 50",
+        "id": 4,
+        "descripcion": "Rompes la alcancía"
+      },
+      {
+        "tipo": "Comunidad",
+        "accion": "PAGA 100",
+        "id": 5,
+        "descripcion": "Pagas matrícula universitaria"
+      },
+      {
+        "tipo": "Comunidad",
+        "accion": "RECIBE 150",
+        "id": 6,
+        "descripcion": "Encuentras trabajo part-time"
+      },
+      {
+        "tipo": "Comunidad",
+        "accion": "PAGA 30",
+        "id": 7,
+        "descripcion": "Junta de vecinos: gastas onces"
+      },
+      {
+        "tipo": "Comunidad",
+        "accion": "RECIBE 200",
+        "id": 8,
+        "descripcion": "Bono por buen contribuyente"
+      },
+      {
+        "tipo": "Comunidad",
+        "accion": "PAGA 120",
+        "id": 9,
+        "descripcion": "Inflación repentina"
+      }
+    ]
+  },
+  "dineroBanco": 17000,
+  "numeroDados": 2,
+  "turnoActual": 1,
+  "tasaImpuesto": 10,
+  "maximoCasas": 4,
+  "maximoHoteles": 1,
+  "terminado": false
+}

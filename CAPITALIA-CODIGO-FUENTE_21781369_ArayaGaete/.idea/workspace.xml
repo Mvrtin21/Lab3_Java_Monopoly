@@ -5,15 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eeebd243-57a7-4676-a7c3-d2fa7d7797f4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cl/usach/CartaComunidad_MartinArayaGaete_217813697.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/usach/CartaComunidad_MartinArayaGaete_217813697.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cl/usach/CartaSuerte_MartinArayaGaete_217813697.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/usach/CartaSuerte_MartinArayaGaete_217813697.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cl/usach/Hotel_MartinArayaGaete_217813697.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/usach/Hotel_MartinArayaGaete_217813697.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cl/usach/Juego_MartinArayaGaete_217813697.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/usach/Juego_MartinArayaGaete_217813697.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cl/usach/Jugador_MartinArayaGaete_217813697.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/usach/Jugador_MartinArayaGaete_217813697.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cl/usach/Main_MartinArayaGaete_217813697.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/usach/Main_MartinArayaGaete_217813697.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cl/usach/Propiedad_MartinArayaGaete_217813697.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/usach/Propiedad_MartinArayaGaete_217813697.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cl/usach/Tablero_MartinArayaGaete_217813697.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/usach/Tablero_MartinArayaGaete_217813697.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/cl/usach/CartaComunidad_MartinArayaGaete_217813697.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/cl/usach/CartaSuerte_MartinArayaGaete_217813697.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/cl/usach/Carta_MartinArayaGaete_217813697.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/cl/usach/Hotel_MartinArayaGaete_217813697.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/cl/usach/Juego_MartinArayaGaete_217813697.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/cl/usach/Jugador_MartinArayaGaete_217813697.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/cl/usach/Main_MartinArayaGaete_217813697.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/cl/usach/Propiedad_MartinArayaGaete_217813697.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/cl/usach/Tablero_MartinArayaGaete_217813697.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +45,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -48,22 +60,24 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Gradle.CAPITALIA-CODIGO-FUENTE_21781369_ArayaGaete [:cl.usach.Main_MartinArayaGaete_217813697.main()].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Lab3_217813697_MartinArayaGaete [:cl.usach.Main_MartinArayaGaete_217813697.main()].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Lab3_217813697_MartinArayaGaete.executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/marti/Downloads/USACH/Paradigmas/Labs/Lab3_217813697_MartinArayaGaete/CAPITALIA-CODIGO-FUENTE_21781369_ArayaGaete&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/marti/Downloads/USACH/Paradigmas/Labs/Lab3_217813697_MartinArayaGaete/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -117,12 +131,23 @@
       <workItem from="1750990018013" duration="1621000" />
       <workItem from="1751067791457" duration="3280000" />
       <workItem from="1751078303202" duration="2660000" />
-      <workItem from="1751130822815" duration="15957000" />
+      <workItem from="1751130822815" duration="23297000" />
+      <workItem from="1751242852471" duration="11793000" />
+      <workItem from="1751260527105" duration="300000" />
+      <workItem from="1751261708384" duration="1001000" />
+      <workItem from="1751322293055" duration="4828000" />
+      <workItem from="1751329180317" duration="896000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -134,8 +159,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/cl/usach/Juego_MartinArayaGaete_217813697.java</url>
-          <line>257</line>
+          <line>305</line>
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/cl/usach/Juego_MartinArayaGaete_217813697.java</url>
+          <line>951</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

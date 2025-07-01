@@ -46,8 +46,7 @@ public class CartaSuerte_MartinArayaGaete_217813697 extends Carta_MartinArayaGae
             System.out.println(jugador.getNombre() + " pagó $" + monto + ".");
         } else if (accion.startsWith("RECIBE")) {
             int monto = Integer.parseInt(accion.split(" ")[1]);
-            jugador.pagaDinero(monto);
-            System.out.println(jugador.getNombre() + " recibió $" + monto + ".");
+            jugador.pagaDinero(-monto);
         } else if (accion.startsWith("AVANZA")) {
             int pasos = Integer.parseInt(accion.split(" ")[1]);
             juego.moverJugador(jugador.getId(), pasos);

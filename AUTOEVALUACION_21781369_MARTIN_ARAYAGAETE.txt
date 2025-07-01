@@ -1,0 +1,36 @@
+=========================================
+AUTOEVALUACION_21781369_MARTIN_ARAYAGAETE
+=========================================
+
+1.  RF01  - Clases y estructuras que forman el programa:    1
+2.  RF02  - Menú interactivo por terminal*:                 1
+3.  RF03  - TDA Jugador (Player):                           1
+4.  RF04  - TDA Propiedad (Property):                       1
+5.  RF05  - TDA Hotel - constructor:                        1
+6.  RF06  - TDA Juego - constructor:                        1
+7.  RF07  - TDA CartaComunidad:                             1
+8.  RF08  - TDA CartaSuerte:                                1
+9.  RF09  - TDA Tablero:                                    1
+10. RF10  - TDA Juego:                                      1
+10. RF10b - TDA Juego - imprimir:                           1
+11. RF11  - Cargar datos iniciales:                         1
+12. RF12  - Agregar Propiedad:                              1
+13. RF13  - Agregar Jugador:                                1
+14. RF14  - Obtener Jugador Actual:                         1
+15. RF15  - Lanzar dados:                                   1
+16. RF16  - Mover Jugador:                                  1
+17. RF17  - Comprar Propiedad:                              1
+18. RF18  - Calcular Renta Propiedad:                       1
+19. RF19  - Calcular Renta Jugador:                         1
+20. RF20  - Construir Hotel:                                1
+21. RF21  - Pagar Renta:                                    1
+22. RF22  - Hipotecar Propiedad:                            1
+23. RF23  - Extraer Carta:                                  1
+24. RF24  - Verificar bancarrota:                           1
+25. RF25  - Jugar Turno:                                    1
+26. RF26  - OPCIONAL Integración con IA:                    -
+27. RF27  - OPCIONAL Exportar partida actual a un archivo:  1
+28. RF28  - OPCIONAL Importar partida desde un archivo:     1
+
+
+

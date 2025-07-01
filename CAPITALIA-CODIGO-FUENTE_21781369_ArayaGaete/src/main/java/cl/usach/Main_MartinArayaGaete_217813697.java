@@ -14,7 +14,10 @@ public class Main_MartinArayaGaete_217813697 {
             if (juego == null) {
                 System.out.println("1. Crear nueva partida");
                 System.out.println("8. Salir");
+                System.out.println("9. Importar partida desde archivo");
             } else {
+                Jugador_MartinArayaGaete_217813697 jugador_actual = juego.getJugadorActual();
+                System.out.println("Turno de " + jugador_actual.getNombre() + ":");
                 System.out.println("1. Crear nueva partida");
                 System.out.println("2. Visualizar estado actual del juego");
                 System.out.println("3. Jugar turno");
@@ -23,6 +26,14 @@ public class Main_MartinArayaGaete_217813697 {
                 System.out.println("6. Hipotecar propiedad");
                 System.out.println("7. Deshipotecar propiedad");
                 System.out.println("8. Salir");
+                System.out.println("9. Exportar partida a archivo");
+                // Si el jugador actual está en la cárcel, añadimos opciones extra:
+                if (jugador_actual.isEstaEnCarcel()) {
+                    System.out.println("9. Pagar multa de $500");                   // o el monto que hayas definido
+                    if (jugador_actual.getTotalCartasSalirCarcel() > 0) {
+                        System.out.println("10. Usar tarjeta comodín \"Salir de la cárcel\"");
+                    }
+                }
             }
             System.out.print("Seleccione opción: ");
 
@@ -40,6 +51,25 @@ public class Main_MartinArayaGaete_217813697 {
                 continue;
             }
 
+            // 2) Procesa IMPORTAR/EXPORTAR SIEMPRE, independientemente de si ya hay partida o no
+            if (opcion == 9) {
+                if (juego == null) {
+                    System.out.print("Ruta del archivo JSON a importar: ");
+                    String rutaIn = sc.nextLine().trim();
+                    juego = Juego_MartinArayaGaete_217813697.importar(rutaIn);
+                    if (juego != null) {
+                        System.out.println("¡Partida importada correctamente!");
+                    } else {
+                        System.out.println("No se pudo importar la partida.");
+                    }
+                } else {
+                    System.out.print("Ruta para guardar el archivo (ej: partida.json): ");
+                    String rutaOut = sc.nextLine().trim();
+                    juego.exportar(rutaOut);
+                }
+                continue;
+            }
+
             if (juego == null) {
                 System.out.println("Primero crea una partida.");
                 continue;
@@ -52,6 +82,10 @@ public class Main_MartinArayaGaete_217813697 {
 
                 case 3:
                     juego.jugarTurno(sc);
+                    if (juego.isTerminado()) {
+                        // Ya imprimió “¡El juego ha terminado!…” dentro de avanzarYVerificarFin()
+                        ejecutando = false;
+                    }
                     break;
 
                 case 4:
@@ -73,6 +107,23 @@ public class Main_MartinArayaGaete_217813697 {
                 case 8:
                     System.out.println("¡Gracias por jugar CAPITALIA!");
                     ejecutando = false;
+                    break;
+
+                case 9:
+                    if (juego == null) {
+                        System.out.print("Ruta del archivo JSON a importar: ");
+                        String rutaIn = sc.nextLine().trim();
+                        juego = Juego_MartinArayaGaete_217813697.importar(rutaIn);
+                        if (juego != null) {
+                            System.out.println("¡Partida importada correctamente!");
+                        } else {
+                            System.out.println("No se pudo importar la partida.");
+                        }
+                    } else {
+                        System.out.print("Ruta para guardar el archivo (ej: partida.json): ");
+                        String ruta = sc.nextLine().trim();
+                        juego.exportar(ruta);
+                    }
                     break;
 
                 default:

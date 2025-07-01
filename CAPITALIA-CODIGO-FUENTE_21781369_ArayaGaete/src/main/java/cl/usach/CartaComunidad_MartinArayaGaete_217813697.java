@@ -46,16 +46,22 @@ public class CartaComunidad_MartinArayaGaete_217813697 extends Carta_MartinAraya
             System.out.println(jugador.getNombre() + " pagó $" + monto + ".");
         } else if (accion.startsWith("RECIBE")) {
             int monto = Integer.parseInt(accion.split(" ")[1]);
-            jugador.pagaDinero(monto);
-            System.out.println(jugador.getNombre() + " recibió $" + monto + ".");
+            jugador.pagaDinero(-monto);
         } else if (accion.startsWith("AVANZA")) {
             int pasos = Integer.parseInt(accion.split(" ")[1]);
             juego.moverJugador(jugador.getId(), pasos);
             System.out.println(jugador.getNombre() + " avanza " + pasos + " casillas.");
             // Procesar casilla destino si quieres
         } else if (accion.equals("CARCEL")) {
+            // 1) Marcar en cárcel
             jugador.setEstaEnCarcel(true);
-            System.out.println(jugador.getNombre() + " ha sido enviado a la cárcel.");
+            // 2) Llevarlo a la posición de la casilla Cárcel
+            int indiceCarcel = juego.getTablero().getIndiceCarcel();
+            jugador.setPosicionActual(indiceCarcel);
+            // 3) Reiniciar contador de intentos en cárcel
+            jugador.setContadorCarcel(0);
+            System.out.println(jugador.getNombre() + " ha sido enviado a la cárcel y ahora está en la casilla Cárcel (índice "
+                    + indiceCarcel + ").");
         } else {
             System.out.println("Acción desconocida: " + accion);
         }
