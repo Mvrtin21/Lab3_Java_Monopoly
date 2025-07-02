@@ -300,7 +300,7 @@ public class Juego_MartinArayaGaete_217813697 {
             jugadores.add(jugador);
             dineroBanco -= capitalInicial;
         } else {
-            System.out.println("¡No hay suficiente dinero en el banco para crear otro jugador!");
+            System.out.println("No hay suficiente dinero en el banco para crear otro jugador!");
         }
     }
 
@@ -403,7 +403,7 @@ public class Juego_MartinArayaGaete_217813697 {
         jugador.agregarPropiedad(propiedad);
         propiedad.setDueno(jugador);
 
-        System.out.println("¡" + jugador.getNombre() + " ha comprado \"" + propiedad.getNombre() + "\" por $" + propiedad.getPrecio() + "!");
+        System.out.println(jugador.getNombre() + " ha comprado \"" + propiedad.getNombre() + "\" por $" + propiedad.getPrecio() + "!");
         return true;
     }
 
@@ -499,7 +499,7 @@ public class Juego_MartinArayaGaete_217813697 {
         propiedad.setEsHotel(true);
         propiedad.setCasas(0);
 
-        System.out.println("¡" + jugador.getNombre() + " ha construido un hotel en \"" + propiedad.getNombre() + "\"!");
+        System.out.println(jugador.getNombre() + " ha construido un hotel en \"" + propiedad.getNombre() + "\"!");
         return true;
     }
 
@@ -573,7 +573,7 @@ public class Juego_MartinArayaGaete_217813697 {
         int renta = propiedad.getRenta();
 
         if (quienPaga.getDinero() < renta) {
-            System.out.println("¡" + quienPaga.getNombre() + " no tiene suficiente dinero para pagar la renta de $" + renta + "!");
+            System.out.println(quienPaga.getNombre() + " no tiene suficiente dinero para pagar la renta de $" + renta + "!");
             System.out.println("Se declara bancarrota. Todas sus propiedades pasaran a " + dueno.getNombre() + ".");
 
             // Transferencia de propiedades
@@ -700,7 +700,7 @@ public class Juego_MartinArayaGaete_217813697 {
             try {
                 n = Integer.parseInt(sc.nextLine().trim());
                 if (n < 2) {
-                    System.out.println("¡Oye compadre! Al menos tienen que ser 2 jugadores.");
+                    System.out.println("Oye compadre! Al menos tienen que ser 2 jugadores.");
                 } else {
                     break;
                 }
@@ -740,7 +740,7 @@ public class Juego_MartinArayaGaete_217813697 {
         juego.setNumeroDados(dados);
         juego.setTurnoActual(0);
 
-        System.out.println("Partida creada. ¡A jugar!");
+        System.out.println("Partida creada. A jugar!");
         return juego;
     }
 
@@ -762,7 +762,7 @@ public class Juego_MartinArayaGaete_217813697 {
 
         // 0) ¿Está en bancarrota? -> salta turno
         if (verificarBancarrota(jugador)) {
-            System.out.println("¡" + jugador.getNombre() + " esta en bancarrota y pierde su turno!");
+            System.out.println(jugador.getNombre() + " esta en bancarrota y pierde su turno!");
             avanzarYVerificarFin();
             return;
         }
@@ -777,7 +777,7 @@ public class Juego_MartinArayaGaete_217813697 {
                 if (sc.nextLine().trim().equalsIgnoreCase("S")) {
                     jugador.setEstaEnCarcel(false);
                     jugador.decrementarCartaSalirCarcel();
-                    System.out.println("¡Has salido de la carcel usando la carta!");
+                    System.out.println("Has salido de la carcel usando la carta!");
                     // continúa con turno normal
                 } else {
                     System.out.println("Decidiste no usar carta.");
@@ -794,10 +794,10 @@ public class Juego_MartinArayaGaete_217813697 {
             boolean todosIguales = resultados.stream().distinct().count() == 1;
             if (todosIguales) {
                 jugador.setContadorCarcel(jugador.getContadorCarcel() - 1);
-                System.out.println("¡Dobles! vas por " + jugador.getContadorCarcel() + " seguidas y repites turno.");
+                System.out.println("Dobles! vas por " + jugador.getContadorCarcel() + " seguidas y repites turno.");
                 if (jugador.getContadorCarcel() <= -3) {
                     jugador.setEstaEnCarcel(false);
-                    System.out.println("¡Lograste salir de la carcel por perseverancia!");
+                    System.out.println("Lograste salir de la carcel por perseverancia!");
                 } else {
                     // repite turno sin mover
                     return;
@@ -843,11 +843,11 @@ public class Juego_MartinArayaGaete_217813697 {
         if (todosIguales) {
             // Incrementa contador positivo
             jugador.setContadorCarcel(jugador.getContadorCarcel() + 1);
-            System.out.println("¡Sacaste dados iguales! Contador carcel = " + jugador.getContadorCarcel());
+            System.out.println("Sacaste dados iguales! Contador carcel = " + jugador.getContadorCarcel());
 
             if (jugador.getContadorCarcel() >= 3) {
                 // Tres veces sacaste dobles: vas a la cárcel
-                System.out.println("¡Tres dobles consecutivos! Vas directo a la carcel.");
+                System.out.println("Tres dobles consecutivos! Vas directo a la carcel.");
                 jugador.setEstaEnCarcel(true);
                 jugador.setPosicionActual(tablero.getIndiceCarcel());
                 jugador.setContadorCarcel(0);
@@ -887,10 +887,10 @@ public class Juego_MartinArayaGaete_217813697 {
                 if (cC != null) cC.ejecutarAccion(this);
                 break;
             case "Carcel":
-                System.out.println("¡Estas de visita en la carcel!");
+                System.out.println("Estas de visita en la carcel!");
                 break;
             case "Vas a la Carcel":
-                System.out.println("¡Vas directo a la carcel!");
+                System.out.println("Vas directo a la carcel!");
                 jugador.setEstaEnCarcel(true);
                 jugador.setPosicionActual(tablero.getIndiceCarcel());  // manda a la casilla cárcel
                 jugador.setContadorCarcel(0);  // reinicia contador
@@ -955,7 +955,7 @@ public class Juego_MartinArayaGaete_217813697 {
             Jugador_MartinArayaGaete_217813697 ganador = jugadores.stream()
                     .filter(p -> !verificarBancarrota(p))
                     .findFirst().get();
-            System.out.println("\n¡El juego ha terminado! El ganador es " + ganador.getNombre() + " 🎉🤑🤑🤑");
+            System.out.println("\nEl juego ha terminado! El ganador es " + ganador.getNombre() + " 🎉🤑🤑🤑");
             // **Marca el juego como terminado**
             setTerminado(true);
         } else {

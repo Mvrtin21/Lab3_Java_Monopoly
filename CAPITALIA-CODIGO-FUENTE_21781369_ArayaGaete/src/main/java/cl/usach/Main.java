@@ -8,7 +8,7 @@ import java.util.Scanner;
  * Contiene el método main que lanza el juego por consola,
  * mostrando el menú principal y gestionando la interacción con el usuario.
  */
-public class Main_MartinArayaGaete_217813697 {
+public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Juego_MartinArayaGaete_217813697 juego = null;
@@ -57,11 +57,11 @@ public class Main_MartinArayaGaete_217813697 {
             // 2) Procesa IMPORTAR/EXPORTAR SIEMPRE, independientemente de si ya hay partida o no
             if (opcion == 9) {
                 if (juego == null) {
-                    System.out.print("Ruta del archivo JSON a importar: ");
+                    System.out.print("Ruta del archivo JSON a importar  (ej>>> martinEnCarcel.json): ");
                     String rutaIn = sc.nextLine().trim();
                     juego = Juego_MartinArayaGaete_217813697.importar(rutaIn);
                     if (juego != null) {
-                        System.out.println("¡Partida importada correctamente!");
+                        System.out.println("Partida importada correctamente!");
                     } else {
                         System.out.println("No se pudo importar la partida.");
                     }
@@ -108,7 +108,7 @@ public class Main_MartinArayaGaete_217813697 {
                     break;
 
                 case 8:
-                    System.out.println("¡Gracias por jugar CAPITALIA!");
+                    System.out.println("Gracias por jugar CAPITALIA!");
                     ejecutando = false;
                     break;
 
@@ -118,7 +118,7 @@ public class Main_MartinArayaGaete_217813697 {
                         String rutaIn = sc.nextLine().trim();
                         juego = Juego_MartinArayaGaete_217813697.importar(rutaIn);
                         if (juego != null) {
-                            System.out.println("¡Partida importada correctamente!");
+                            System.out.println("Partida importada correctamente!");
                         } else {
                             System.out.println("No se pudo importar la partida.");
                         }

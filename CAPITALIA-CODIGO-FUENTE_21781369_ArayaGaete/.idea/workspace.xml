@@ -83,8 +83,8 @@
   }
 }</component>
   <component name="RunManager" selected="Gradle.Tests in 'Lab3_217813697_MartinArayaGaete'">
-    <configuration name="Main_MartinArayaGaete_217813697" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cl.usach.Main_MartinArayaGaete_217813697" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cl.usach.Main" />
       <module name="Lab3_217813697_MartinArayaGaete.main" />
       <extension name="coverage">
         <pattern>
@@ -121,7 +121,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Tests in 'Lab3_217813697_MartinArayaGaete'" />
-        <item itemvalue="Application.Main_MartinArayaGaete_217813697" />
       </list>
     </recent_temporary>
   </component>
@@ -165,6 +164,8 @@
       <workItem from="1751403777551" duration="2679000" />
       <workItem from="1751406669278" duration="18026000" />
       <workItem from="1751440594741" duration="96000" />
+      <workItem from="1751494229839" duration="1837000" />
+      <workItem from="1751496324280" duration="135000" />
     </task>
     <servers />
   </component>

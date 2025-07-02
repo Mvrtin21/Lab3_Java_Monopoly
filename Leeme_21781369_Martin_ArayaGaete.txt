@@ -10,9 +10,9 @@ Correo: martin.araya.g@usach.cl
 == Instrucciones de Ejecución ==
  
 Requisitos:
-- Java JDK 11
-- Gradle (ya incluye el Gradle Wrapper el .zip)
-- Biblioteca Gson (configurada en build.gradle)
+-> OpenJDK 11.0.27 LTS (https://learn.microsoft.com/es-es/java/openjdk/download)
+-  Gradle (ya incluye el Gradle Wrapper el .zip)
+-  Biblioteca Gson (configurada en build.gradle)
 
 Estructura del proyecto:
 - .gitignore
@@ -39,7 +39,7 @@ Instrucciones de compilación y ejecución:
 Entrar al directorio del proyecto:
 
 En terminal:
->>>> cd CAPITALIA-CODIGO-FUENTE_21781369_ArayaGaete
+>>>> cd C:\Users\...\...\Lab3_217813697_MartinArayaGaete\CAPITALIA-CODIGO-FUENTE_21781369_ArayaGaete
 
 Compilar y ejecutar:
 
@@ -79,9 +79,10 @@ Persistencia de partidas:
   exportado. El juego se restaura al estado guardado.
 
 Pruebas:
-- Se incluyeron pruebas unitarias (martinEnCarcel.json) para cada requisito funcional:
-  RF03 a RF28 (exportar e importar opcional).
-
+- Se incluyeron partidas ("martinEnCarcel.json"), digite textualmente el nombre de el archivo de 
+  la partida exportada "martinEnCarcel.json"
+  - Se encuentra un archivo llamado "Historial partida 'martinEnCarcel.json'" en la carpeta principal
+    donde se refleja el historial de la partida, para entender como llego hasta su exportación.
 
 Notas:
 - Asegúrate de tener permisos de escritura en el directorio donde exportes JSON 

@@ -17,7 +17,7 @@ dependencies {
 }
 
 application {
-    mainClass = 'cl.usach.Main_MartinArayaGaete_217813697'
+    mainClass = 'cl.usach.Main'
 }
 
 run {
