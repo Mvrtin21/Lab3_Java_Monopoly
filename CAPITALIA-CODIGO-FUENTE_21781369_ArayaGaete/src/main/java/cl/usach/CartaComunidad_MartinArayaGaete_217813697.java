@@ -64,7 +64,7 @@ public class CartaComunidad_MartinArayaGaete_217813697 extends Carta_MartinAraya
             jugador.setPosicionActual(indiceCarcel);
             // 3) Reiniciar contador de intentos en cárcel
             jugador.setContadorCarcel(0);
-            System.out.println(jugador.getNombre() + " ha sido enviado a la cárcel y ahora está en la casilla Cárcel (índice "
+            System.out.println(jugador.getNombre() + " ha sido enviado a la carcel y ahora está en la casilla Carcel (indice "
                     + indiceCarcel + ").");
         } else {
             System.out.println("Acción desconocida: " + accion);

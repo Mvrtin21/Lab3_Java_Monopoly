@@ -58,30 +58,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Building Gradle Dependencies.executor": "Run",
-    "Gradle.CAPITALIA-CODIGO-FUENTE_21781369_ArayaGaete [:cl.usach.Main_MartinArayaGaete_217813697.main()].executor": "Run",
-    "Gradle.Lab3_217813697_MartinArayaGaete [:cl.usach.Main_MartinArayaGaete_217813697.main()].executor": "Run",
-    "Gradle.Lab3_217813697_MartinArayaGaete.executor": "Run",
-    "Gradle.Tests in 'Lab3_217813697_MartinArayaGaete'.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "last_opened_file_path": "C:/Users/marti/Downloads/USACH/Paradigmas/Labs/Lab3_217813697_MartinArayaGaete/CAPITALIA-CODIGO-FUENTE_21781369_ArayaGaete",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/marti/Downloads/USACH/Paradigmas/Labs/Lab3_217813697_MartinArayaGaete/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Building Gradle Dependencies.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CAPITALIA-CODIGO-FUENTE_21781369_ArayaGaete [:cl.usach.Main_MartinArayaGaete_217813697.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Lab3_217813697_MartinArayaGaete [:cl.usach.Main_MartinArayaGaete_217813697.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Lab3_217813697_MartinArayaGaete.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests in 'Lab3_217813697_MartinArayaGaete'.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/marti/Downloads/USACH/Paradigmas/Labs/Lab3_217813697_MartinArayaGaete/CAPITALIA-CODIGO-FUENTE_21781369_ArayaGaete&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/marti/Downloads/USACH/Paradigmas/Labs/Lab3_217813697_MartinArayaGaete/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Gradle.Tests in 'Lab3_217813697_MartinArayaGaete'">
     <configuration name="Main_MartinArayaGaete_217813697" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cl.usach.Main_MartinArayaGaete_217813697" />
@@ -163,7 +163,8 @@
       <workItem from="1751329180317" duration="896000" />
       <workItem from="1751341906784" duration="692000" />
       <workItem from="1751403777551" duration="2679000" />
-      <workItem from="1751406669278" duration="12527000" />
+      <workItem from="1751406669278" duration="18026000" />
+      <workItem from="1751440594741" duration="96000" />
     </task>
     <servers />
   </component>
@@ -188,11 +189,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/cl/usach/Tablero_MartinArayaGaete_217813697.java</url>
           <line>34</line>
           <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cl/usach/Juego_MartinArayaGaete_217813697.java</url>
-          <line>694</line>
-          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

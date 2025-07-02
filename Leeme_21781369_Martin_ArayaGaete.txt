@@ -1,85 +1,94 @@
-CAPITALIA - Monopoly  
-=====================
+CAPITALIA - Monopoly en Java (POO)
+=====================================================================================================
+CAPITALIA es una implementación en Java de un juego tipo Monopoly utilizando programación orientada a 
+objetos. Permite crear partidas, gestionar jugadores, propiedades, construcción de casas/hoteles, 
+cartas de suerte/comunidad, cárcel, hipotecas, renta, bancarrota y persistencia de partidas en JSON.
+=====================================================================================================
 Autor: Martín Araya
 Correo: martin.araya.g@usach.cl
 
-== Instrucciones de Ejecución  
+== Instrucciones de Ejecución ==
+ 
+Requisitos:
+- Java JDK 11
+- Gradle (ya incluye el Gradle Wrapper el .zip)
+- Biblioteca Gson (configurada en build.gradle)
 
-1. Requisitos Previos 
-   - Tener instalado SWI-Prolog (versión 8.4 o superior).
-   - Clonar o mover todos los archivos .pl del proyecto a una misma carpeta. 
+Estructura del proyecto:
+- .gitignore
+- gradle.properties
+- gradlew
+- gradlew.bat
+- martinEnCarcel.json (partida exportada, lista para ser importada en pruebas)
+- build.gradle           : Definición de dependencias y tarea de ejecución
+- settings.gradle        : Nombre del proyecto
+- src/main/java/cl/usach : Código fuente Java dividido en paquetes y clases:
+     Main_MartinArayaGaete_217813697.java
+     Juego_MartinArayaGaete_217813697.java
+     Jugador_MartinArayaGaete_217813697.java
+     Propiedad_MartinArayaGaete_217813697.java
+     Hotel_MartinArayaGaete_217813697
+     Tablero_MartinArayaGaete_217813697.java
+     Carta_MartinArayaGaete_217813697.java
+     CartaSuerte_MartinArayaGaete_217813697.java
+     CartaComunidad_MartinArayaGaete_217813697.java
+src/main/resources     : Archivos de configuración
+src/test/java          : Pruebas unitarias
 
-2. Archivos Necesarios
-   - jugador_21781369_Martin_ArayaGaete.pl (TDA Jugador)
-   - propiedad_21781369_Martin_ArayaGaete.pl (TDA Propiedad)
-   - carta_21781369_Martin_ArayaGaete.pl (TDA Carta)
-   - tablero_21781369_Martin_ArayaGaete.pl (TDA Tablero)
-   - juego_21781369_Martin_ArayaGaete.pl (Lógica principal de Juego)
-   - pruebas_21781369_Martin_ArayaGaete.pl (Script de pruebas)
-   - Cualquier otro script de escenario (script1_21781369_… .pl, script2_21781369_… .pl, etc.)
+Instrucciones de compilación y ejecución:
+Entrar al directorio del proyecto:
 
-3. Carga de Módulos en SWI-Prolog
-   - Abrir SWI-Prolog; verás el prompt: ?- 
-   - Ejecutar (consulta) el archivo 'pruebas_21781369_Martin_ArayaGaete.pl' para cargar todos 
-     los módulos
-   - Con esto, todos los predicados (jugador/8, propiedad/9, carta/5, etc.) ya estarán disponibles 
-     para ejecutar cualquier script de escenario.
+En terminal:
+>>>> cd CAPITALIA-CODIGO-FUENTE_21781369_ArayaGaete
 
-4. Ejecución de Scripts de Escenario
-   - En la misma sesión de SWI-Prolog, copiar el contenido de uno de los scripts de escenario 
-     (script1_21781369_Martin_ArayaGaete.pl, script2_21781369_Martin_ArayaGaete.pl, etc.)
-   - Pegar el scriptX_21781369_Martin_ArayaGaete.pl a la consulta de 
-     pruebas_21781369_Martin_ArayaGaete.pl
-   - Al presionar Enter tras pegar todo el bloque, SWI-Prolog ejecutará cada meta en secuencia 
-     y mostrará los resultados (unificación de variables como G1 = …).
+Compilar y ejecutar:
 
-5. Depuración de Errores Comunes (Al intentar crear un nuevo script)
-   - IDs duplicados: Verifica que cada jugador/8, propiedad/9 y carta/5 tenga un ID único.
-   - Propiedad no agregada al tablero: Si usas jugadorComprarPropiedad(J1, P3, …) pero P3 nunca 
-     se incluyó con tableroAgregarPropiedades/3, dará falso o error.
-   - Montos insuficientes: Si el precio de la propiedad es mayor que el capital del jugador 
-     (ej. $1500), la compra falla con false. Ajusta valores o el capital inicial si es necesario.
-   - Variables intermedias no unificadas: Asegúrate de recolectar salidas como P1_v2, J1_v2, 
-     antes de usarlas en la siguiente llamada.
-   - Metas “false” intencionales: Todos los casos que esperen false deben estar comentados o 
-     aislados, para que no interrumpan el bloque de ejecución.
+(Windows)
+>>>> .\gradlew.bat build
+>>>> .\gradlew.bat run --console=plain
 
-5. Reglas Clave  
-   - Bancarrota: Un jugador pierde si su dinero llega a 0 o menos.  
-   - Cárcel:  
-     - Pagar $500 o usar tarjeta para salir.  
-     - Tres dobles/triples seguidos envían a la cárcel o sacarte de ella.  
-   - Cartas: 
-     - Las cartas de Suerte/Comunidad se activan al caer en sus casillas.  
+(Linux / macOS)
+Dar permisos de ejecución al wrapper (una sola vez):
+>>>> chmod +x gradlew
+>>>> ./gradlew build
+>>>> ./gradlew run --console=plain
 
-6. Acciones permitidas en juegoJugarTurno/6:
+Uso del programa:
 
-   - juegoConstruirCasa (Argumentos: [JuegoPrevio, Propiedad, JuegoModificado])
+Al iniciar, el menú muestra opciones para:
 
-   - juegoConstruirHotel (Argumentos: [JuegoPrevio, Propiedad, JuegoModificado])
+- Crear nueva partida
+- Importar partida desde archivo JSON
+- Mostrar estado actual del juego
+- Jugar turno completo
+- Construir casa
+- Construir hotel
+- Hipotecar propiedad
+- Deshipotecar propiedad
+- Exportar partida a archivo JSON
+- Pagar multa (si está en cárcel)
+- Usar tarjeta comodín "Salir de la cárcel" (si aplica)
+- Salir del juego
 
-   - jugadorComprarPropiedad (Argumentos: [JugadorActual, Propiedad, PropiedadModificada, JugadorModificado])
+Persistencia de partidas:
 
-   - propiedadHipotecar (Argumentos: [Propiedad, PropiedadModificada])
+- Exportar: elige la opción correspondiente e ingresa un nombre de archivo (ej. partida1.json). 
+  El juego guarda el estado actual en JSON.
 
-   - pagarSalirCarcel (Argumentos: [])
+- Importar: desde el menú principal elige cargar partida e ingresa la ruta del archivo JSON 
+  exportado. El juego se restaura al estado guardado.
 
-   - jugarCartaSalirCarcel (Argumentos: [])
+Pruebas:
+- Se incluyeron pruebas unitarias (martinEnCarcel.json) para cada requisito funcional:
+  RF03 a RF28 (exportar e importar opcional).
 
-7. Notas importantes
-   - Los scripts funcionan a la perfección, y más aun si se prueba en el IDE web (mas orden, 
-     mejorando su visualización), pero no se pudo realizar pruebas mas de 3 veces de cada predicado 
-     por el alto costo que requiere usar backtracking, haciendo que al consultar el script, 
-     no suceda nada, por lo que se quitaron varias consultas.
-     -> Actualización 03/06:
-        >>> Se edito el script2, el cual prueba 3 veces cada predicado, se esta probando para script 1,
-            se comprueba su funcionamiento a partir de probarlo 3 veces, pero igualmente, se recomienda
-            rigurosidad al agregar cualquier otro predicado.  
 
-   - IDs únicos: Usa valores numéricos distintos para cada jugador, propiedad, carta y semilla (seed).
+Notas:
+- Asegúrate de tener permisos de escritura en el directorio donde exportes JSON 
+  (Que es la misma "CAPITALIA-CODIGO-FUENTE_21781369_ArayaGaete").
 
-   - Si se desea crear propiedades, estas deben crearse en posiciones consecutivas.
+Autor:
+- Martín Ignacio Araya Gaete - Ingeniería Civil en Informática, USACH
 
-   - Cada vez que invoques juegoJugarTurno/6, emplea una variable nueva para el estado resultante 
-     (G1, G2, G3 …). No repitas nombres como G3 en dos llamadas consecutivas, pues SWI-Prolog los 
-     unifica y corrompe el flujo de prueba.
+Licencia:
+- Este proyecto es para fines académicos en la asignatura Paradigmas de Programación.

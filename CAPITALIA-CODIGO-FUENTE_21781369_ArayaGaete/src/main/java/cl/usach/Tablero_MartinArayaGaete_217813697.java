@@ -90,7 +90,7 @@ public class Tablero_MartinArayaGaete_217813697 {
      */
     public CartaSuerte_MartinArayaGaete_217813697 extraerCartaSuerte() {
         if (cartasSuerte == null || cartasSuerte.isEmpty()) {
-            System.out.println("¡El mazo de cartas de Suerte está vacío!");
+            System.out.println("¡El mazo de cartas de Suerte está vacio!");
             return null;
         }
         int indice = new Random().nextInt(cartasSuerte.size());
@@ -108,7 +108,7 @@ public class Tablero_MartinArayaGaete_217813697 {
      */
     public CartaComunidad_MartinArayaGaete_217813697 extraerCartaComunidad() {
         if (cartasComunidad == null || cartasComunidad.isEmpty()) {
-            System.out.println("¡El mazo de cartas de Comunidad está vacío!");
+            System.out.println("¡El mazo de cartas de Comunidad está vacio!");
             return null;
         }
         int indice = new Random().nextInt(cartasComunidad.size());

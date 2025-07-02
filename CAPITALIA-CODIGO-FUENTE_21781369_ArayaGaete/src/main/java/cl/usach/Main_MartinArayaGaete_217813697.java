@@ -3,6 +3,11 @@ package cl.usach;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Clase principal de la aplicacion CAPITALIA.
+ * Contiene el método main que lanza el juego por consola,
+ * mostrando el menú principal y gestionando la interacción con el usuario.
+ */
 public class Main_MartinArayaGaete_217813697 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -137,7 +142,7 @@ public class Main_MartinArayaGaete_217813697 {
                             System.out.println("No tienes suficiente dinero para pagar la multa.");
                         }
                     } else {
-                        System.out.println("No estas en la cárcel.");
+                        System.out.println("No estas en la carcel.");
                     }
                     break;
 
@@ -148,12 +153,12 @@ public class Main_MartinArayaGaete_217813697 {
                             jugadorComodin.decrementarCartaSalirCarcel();
                             jugadorComodin.setEstaEnCarcel(false);
                             jugadorComodin.setContadorCarcel(0);
-                            System.out.println("Usaste una carta 'Salir de la cárcel' y quedaste libre.");
+                            System.out.println("Usaste una carta 'Salir de la carcel' y quedaste libre.");
                         } else {
                             System.out.println("No tienes cartas comodin disponibles.");
                         }
                     } else {
-                        System.out.println("No estás en la carcel.");
+                        System.out.println("No estas en la carcel.");
                     }
                     break;
 

@@ -56,10 +56,10 @@ public class Juego_MartinArayaGaete_217813697 {
      * RF11. (0.1 pts) Cargar datos iniciales del juego.
      *
      * Este metodo inicializa el tablero agregando 10 cartas de Suerte y
-     * 10 de Comunidad con temáticas chilenas. Las cartas se almacenan en las
+     * 10 de Comunidad con tematicas chilenas. Las cartas se almacenan en las
      * estructuras del tablero para ser usadas durante el juego.
      *
-     * No requiere parámetros ni retorna valores. Es llamado automáticamente
+     * No requiere parametros ni retorna valores. Es llamado automaticamente
      * al crear una nueva partida.
      */
     private void cargarCartas() {
@@ -69,7 +69,7 @@ public class Juego_MartinArayaGaete_217813697 {
         tablero.agregarCartaSuerte(new CartaSuerte_MartinArayaGaete_217813697(2,
                 "Caos en la Costanera Norte", "PAGA 100"));
         tablero.agregarCartaSuerte(new CartaSuerte_MartinArayaGaete_217813697(3,
-                "Se cortó la luz en Providencia", "PAGA 50"));
+                "Se corto la luz en Providencia", "PAGA 50"));
         tablero.agregarCartaSuerte(new CartaSuerte_MartinArayaGaete_217813697(4,
                 "Te gana la micro: llegas tarde", "PAGA 150"));
         tablero.agregarCartaSuerte(new CartaSuerte_MartinArayaGaete_217813697(5,
@@ -85,7 +85,7 @@ public class Juego_MartinArayaGaete_217813697 {
         tablero.agregarCartaSuerte(new CartaSuerte_MartinArayaGaete_217813697(10,
                 "Te traga bus sin vuelto", "PAGA 70"));
         tablero.agregarCartaSuerte(new CartaSuerte_MartinArayaGaete_217813697(11,
-                "Jara salió presidente, el impuesto cambia a 30% IVA", "IMPUESTO 30"));
+                "Jara salio presidente, el impuesto cambia a 30% IVA", "IMPUESTO 30"));
 
         // Cartas de Comunidad
         tablero.agregarCartaComunidad(new CartaComunidad_MartinArayaGaete_217813697(1,
@@ -95,9 +95,9 @@ public class Juego_MartinArayaGaete_217813697 {
         tablero.agregarCartaComunidad(new CartaComunidad_MartinArayaGaete_217813697(3,
                 "Inauguraron Metro de Rancagua", "AVANZA 3"));
         tablero.agregarCartaComunidad(new CartaComunidad_MartinArayaGaete_217813697(4,
-                "Rompes la alcancía", "PAGA 50"));
+                "Rompes la alcancia", "PAGA 50"));
         tablero.agregarCartaComunidad(new CartaComunidad_MartinArayaGaete_217813697(5,
-                "Pagas matrícula universitaria", "PAGA 100"));
+                "Pagas matricula universitaria", "PAGA 100"));
         tablero.agregarCartaComunidad(new CartaComunidad_MartinArayaGaete_217813697(6,
                 "Encuentras trabajo part-time", "RECIBE 150"));
         tablero.agregarCartaComunidad(new CartaComunidad_MartinArayaGaete_217813697(7,
@@ -120,10 +120,10 @@ public class Juego_MartinArayaGaete_217813697 {
      *   - Un bloque de propiedades de comunas chilenas, con precio y renta crecientes.
      *   - Una casilla "Comunidad" cada 3 propiedades.
      *   - Una casilla "Suerte" cada 4 propiedades.
-     *   - Las casillas especiales finales: "Cárcel", "Vas a la Cárcel",
+     *   - Las casillas especiales finales: "Carcel", "Vas a la Carcel",
      *     "Estacionamiento Libre", "Impuesto Municipal" e "Impuesto Verde".
      *
-     * No recibe parámetros ni devuelve valor.
+     * No recibe parametros ni devuelve valor.
      * Se invoca al crear una nueva partida para preparar el tablero.
      */
     private void cargarPropiedades() {
@@ -139,8 +139,8 @@ public class Juego_MartinArayaGaete_217813697 {
 
         // Bloque de comunas (Propiedades)
         String[] comunas = {
-                "Providencia", "Las Condes", "Ñuñoa", "Santiago Centro", "Vitacura",
-                "La Reina", "Macul", "Peñalolén", "La Florida", "Maipú",
+                "Providencia", "Las Condes", "Nunoa", "Santiago Centro", "Vitacura",
+                "La Reina", "Macul", "Peñalolén", "La Florida", "Maipu",
                 "Puente Alto", "Recoleta", "Cerrillos", "Lo Barnechea", "Independencia"
         };
         for (int i = 0; i < comunas.length; i++) {
@@ -175,14 +175,14 @@ public class Juego_MartinArayaGaete_217813697 {
 
         // Últimas casillas especiales restantes
         tablero.agregarPropiedad(new Propiedad_MartinArayaGaete_217813697(
-                id++, "Cárcel", 0, 0,
+                id++, "Carcel", 0, 0,
                 new Jugador_MartinArayaGaete_217813697(-1, "Sistema"),
                 "Carcel"
         ));
         tablero.agregarPropiedad(new Propiedad_MartinArayaGaete_217813697(
-                id++, "Vas a la Cárcel", 0, 0,
+                id++, "Vas a la Carcel", 0, 0,
                 new Jugador_MartinArayaGaete_217813697(-1, "Sistema"),
-                "Vas a la Cárcel"
+                "Vas a la Carcel"
         ));
         tablero.agregarPropiedad(new Propiedad_MartinArayaGaete_217813697(
                 id++, "Estacionamiento Libre", 0, 0,
@@ -307,7 +307,7 @@ public class Juego_MartinArayaGaete_217813697 {
     /**
      * RF14. (0.1 pts) Obtener Jugador Actual.
      *
-     * Este método devuelve el jugador cuyo turno está en curso.
+     * Este método devuelve el jugador cuyo turno esta en curso.
      * Si no hay jugadores en la partida, retorna null.
      *
      * @return el jugador actual o null si no existe ninguno
@@ -388,7 +388,7 @@ public class Juego_MartinArayaGaete_217813697 {
 
         // Verificar si está hipotecada
         if (propiedad.isEstaHipotecada()) {
-            System.out.println("La propiedad \"" + propiedad.getNombre() + "\" está hipotecada. No se puede comprar.");
+            System.out.println("La propiedad \"" + propiedad.getNombre() + "\" esta hipotecada. No se puede comprar.");
             return false;
         }
 
@@ -411,9 +411,9 @@ public class Juego_MartinArayaGaete_217813697 {
      * RF18. (0.1 pts) Calcular Renta de Propiedad.
      *
      * Este método calcula la renta que debe pagar un jugador al caer en una propiedad,
-     * considerando si tiene casas o un hotel. Si la propiedad está hipotecada o no tiene
-     * dueño válido, la renta es cero. Si tiene casas, la renta aumenta un 20% por cada una.
-     * Si es un hotel, la renta es el doble de la renta máxima con casas.
+     * considerando si tiene casas o un hotel. Si la propiedad esta hipotecada o no tiene
+     * dueño valido, la renta es cero. Si tiene casas, la renta aumenta un 20% por cada una.
+     * Si es un hotel, la renta es el doble de la renta maxima con casas.
      *
      * @param propiedad la propiedad cuya renta se desea calcular
      * @return el monto total de renta a pagar
@@ -449,9 +449,9 @@ public class Juego_MartinArayaGaete_217813697 {
      *
      * Este método calcula el total de renta generada por todas las propiedades
      * que posee un jugador, aplicando una tasa de impuesto sobre la suma.
-     * Reutiliza el cálculo de renta individual definido en RF18.
+     * Reutiliza el calculo de renta individual definido en RF18.
      *
-     * @param jugador el jugador cuyas propiedades se evaluarán
+     * @param jugador el jugador cuyas propiedades se evaluaran
      * @return el monto total de renta con impuesto aplicado
      */
     public int calcularRentaJugador(Jugador_MartinArayaGaete_217813697 jugador) {
@@ -473,11 +473,11 @@ public class Juego_MartinArayaGaete_217813697 {
      *
      * Este método permite a un jugador construir un hotel en una propiedad
      * si cumple con las condiciones: ser el dueño, que la propiedad no tenga
-     * ya un hotel y que posea el número máximo de casas requerido. Al construir
+     * ya un hotel y que posea el número maximo de casas requerido. Al construir
      * el hotel, se eliminan las casas existentes y se actualiza el estado de la propiedad.
      *
      * @param jugador   el jugador que desea construir el hotel
-     * @param propiedad la propiedad sobre la cual se construirá el hotel
+     * @param propiedad la propiedad sobre la cual se construira el hotel
      * @return true si la construcción fue exitosa; false en caso contrario
      */
     public boolean construirHotel(Jugador_MartinArayaGaete_217813697 jugador, Propiedad_MartinArayaGaete_217813697 propiedad) {
@@ -508,13 +508,13 @@ public class Juego_MartinArayaGaete_217813697 {
      *
      * Este método permite a un jugador construir una casa en una propiedad
      * si cumple con las condiciones: ser el dueño, que la propiedad no tenga
-     * un hotel, que no haya alcanzado el máximo de casas y que el jugador
+     * un hotel, que no haya alcanzado el maximo de casas y que el jugador
      * tenga suficiente dinero. El costo de la casa es un tercio del precio
      * de la propiedad. Si se construye con éxito, se actualiza la cantidad
      * de casas y se descuenta el dinero correspondiente.
      *
      * @param jugador   el jugador que desea construir la casa
-     * @param propiedad la propiedad sobre la cual se construirá la casa
+     * @param propiedad la propiedad sobre la cual se construira la casa
      * @return true si la construcción fue exitosa; false en caso contrario
      */
     public boolean construirCasa(Jugador_MartinArayaGaete_217813697 jugador, Propiedad_MartinArayaGaete_217813697 propiedad) {
@@ -530,7 +530,7 @@ public class Juego_MartinArayaGaete_217813697 {
         }
 
         if (propiedad.getCasas() >= maximoCasas) {
-            System.out.println("La propiedad \"" + propiedad.getNombre() + "\" ya tiene el máximo de casas permitido.");
+            System.out.println("La propiedad \"" + propiedad.getNombre() + "\" ya tiene el maximo de casas permitido.");
             return false;
         }
 
@@ -574,7 +574,7 @@ public class Juego_MartinArayaGaete_217813697 {
 
         if (quienPaga.getDinero() < renta) {
             System.out.println("¡" + quienPaga.getNombre() + " no tiene suficiente dinero para pagar la renta de $" + renta + "!");
-            System.out.println("Se declara bancarrota. Todas sus propiedades pasarán a " + dueno.getNombre() + ".");
+            System.out.println("Se declara bancarrota. Todas sus propiedades pasaran a " + dueno.getNombre() + ".");
 
             // Transferencia de propiedades
             for (Propiedad_MartinArayaGaete_217813697 prop : quienPaga.getPropiedades()) {
@@ -617,7 +617,7 @@ public class Juego_MartinArayaGaete_217813697 {
         }
 
         if (propiedad.isEstaHipotecada()) {
-            System.out.println("La propiedad \"" + propiedad.getNombre() + "\" ya está hipotecada.");
+            System.out.println("La propiedad \"" + propiedad.getNombre() + "\" ya esta hipotecada.");
             return false;
         }
 
@@ -648,7 +648,7 @@ public class Juego_MartinArayaGaete_217813697 {
         }
 
         if (!propiedad.isEstaHipotecada()) {
-            System.out.println("La propiedad \"" + propiedad.getNombre() + "\" no está hipotecada.");
+            System.out.println("La propiedad \"" + propiedad.getNombre() + "\" no esta hipotecada.");
             return false;
         }
 
@@ -672,8 +672,8 @@ public class Juego_MartinArayaGaete_217813697 {
      * Este método determina si un jugador se encuentra en bancarrota,
      * es decir, si su dinero disponible es menor o igual a cero.
      *
-     * @param jugador el jugador cuya situación financiera se evaluará
-     * @return true si el jugador está en bancarrota; false en caso contrario
+     * @param jugador el jugador cuya situación financiera se evaluara
+     * @return true si el jugador esta en bancarrota; false en caso contrario
      */
     public boolean verificarBancarrota(Jugador_MartinArayaGaete_217813697 jugador) {
         return jugador.getDinero() <= 0;
@@ -683,12 +683,12 @@ public class Juego_MartinArayaGaete_217813697 {
      * Inicializa una nueva partida de CAPITALIA.
      *
      * Este método interactúa con el usuario mediante consola para configurar
-     * la partida: solicita la cantidad de jugadores (mínimo 2), sus nombres
+     * la partida: solicita la cantidad de jugadores (minimo 2), sus nombres
      * y la cantidad de dados por turno (entre 1 y 4). Luego, crea una instancia
      * del juego, agrega los jugadores, configura los dados y deja el turno
      * inicial en cero.
      *
-     * @param sc el escáner utilizado para leer entradas desde consola
+     * @param sc el escaner utilizado para leer entradas desde consola
      * @return una instancia de Juego_MartinArayaGaete_217813697 lista para comenzar
      */
     public static Juego_MartinArayaGaete_217813697 crearPartida(Scanner sc) {
@@ -748,13 +748,13 @@ public class Juego_MartinArayaGaete_217813697 {
      * RF25. (1 pts) Jugar Turno completo.
      *
      * Este método ejecuta un turno completo para el jugador actual, aplicando
-     * todas las reglas del juego: verifica bancarrota, maneja la lógica de cárcel,
+     * todas las reglas del juego: verifica bancarrota, maneja la lógica de carcel,
      * lanza los dados, mueve al jugador, procesa casillas especiales (como Suerte,
-     * Comunidad, Impuestos o Cárcel), permite comprar propiedades o pagar renta,
+     * Comunidad, Impuestos o Carcel), permite comprar propiedades o pagar renta,
      * y gestiona el avance del turno. También transfiere al banco el dinero acumulado
      * por el jugador "Sistema".
      *
-     * @param sc el escáner utilizado para leer decisiones del jugador desde consola
+     * @param sc el escaner utilizado para leer decisiones del jugador desde consola
      */
     public void jugarTurno(Scanner sc) {
         Jugador_MartinArayaGaete_217813697 jugador = getJugadorActual();
@@ -762,22 +762,22 @@ public class Juego_MartinArayaGaete_217813697 {
 
         // 0) ¿Está en bancarrota? -> salta turno
         if (verificarBancarrota(jugador)) {
-            System.out.println("¡" + jugador.getNombre() + " está en bancarrota y pierde su turno!");
+            System.out.println("¡" + jugador.getNombre() + " esta en bancarrota y pierde su turno!");
             avanzarYVerificarFin();
             return;
         }
 
         // Si está en la cárcel
         if (jugador.isEstaEnCarcel()) {
-            System.out.println("Estás en la cárcel.");
+            System.out.println("Estas en la carcel.");
 
             // Ofrecer usar carta de salida si tiene
             if (jugador.getTotalCartasSalirCarcel() > 0) {
-                System.out.print("¿Usar carta \"Salir de la cárcel\"? (S/N): ");
+                System.out.print("¿Usar carta \"Salir de la carcel\"? (S/N): ");
                 if (sc.nextLine().trim().equalsIgnoreCase("S")) {
                     jugador.setEstaEnCarcel(false);
                     jugador.decrementarCartaSalirCarcel();
-                    System.out.println("¡Has salido de la cárcel usando la carta!");
+                    System.out.println("¡Has salido de la carcel usando la carta!");
                     // continúa con turno normal
                 } else {
                     System.out.println("Decidiste no usar carta.");
@@ -797,7 +797,7 @@ public class Juego_MartinArayaGaete_217813697 {
                 System.out.println("¡Dobles! vas por " + jugador.getContadorCarcel() + " seguidas y repites turno.");
                 if (jugador.getContadorCarcel() <= -3) {
                     jugador.setEstaEnCarcel(false);
-                    System.out.println("¡Lograste salir de la cárcel por perseverancia!");
+                    System.out.println("¡Lograste salir de la carcel por perseverancia!");
                 } else {
                     // repite turno sin mover
                     return;
@@ -834,7 +834,7 @@ public class Juego_MartinArayaGaete_217813697 {
                 if (j.isEstaEnCarcel()) {
                     j.setEstaEnCarcel(false);
                     System.out.println(">> " + j.getNombre()
-                            + " sale de la cárcel porque alguien cruzó por Salida.");
+                            + " sale de la carcel porque alguien cruzó por Salida.");
                 }
             }
         }
@@ -843,11 +843,11 @@ public class Juego_MartinArayaGaete_217813697 {
         if (todosIguales) {
             // Incrementa contador positivo
             jugador.setContadorCarcel(jugador.getContadorCarcel() + 1);
-            System.out.println("¡Sacaste dados iguales! Contador cárcel = " + jugador.getContadorCarcel());
+            System.out.println("¡Sacaste dados iguales! Contador carcel = " + jugador.getContadorCarcel());
 
             if (jugador.getContadorCarcel() >= 3) {
                 // Tres veces sacaste dobles: vas a la cárcel
-                System.out.println("¡Tres dobles consecutivos! Vas directo a la cárcel.");
+                System.out.println("¡Tres dobles consecutivos! Vas directo a la carcel.");
                 jugador.setEstaEnCarcel(true);
                 jugador.setPosicionActual(tablero.getIndiceCarcel());
                 jugador.setContadorCarcel(0);
@@ -868,7 +868,7 @@ public class Juego_MartinArayaGaete_217813697 {
         // 3) Procesar casilla destino
         int pos = jugador.getPosicionActual();
         Propiedad_MartinArayaGaete_217813697 casilla = tablero.getPropiedades().get(pos);
-        System.out.println("Caíste en casilla [" + pos + "]: " + casilla.getNombre());
+        System.out.println("Caiste en casilla [" + pos + "]: " + casilla.getNombre());
 
         // 4) Casillas especiales
         String tipo = casilla.getTipo();
@@ -887,10 +887,10 @@ public class Juego_MartinArayaGaete_217813697 {
                 if (cC != null) cC.ejecutarAccion(this);
                 break;
             case "Carcel":
-                System.out.println("¡Estas de vísita en la carcel!");
+                System.out.println("¡Estas de visita en la carcel!");
                 break;
-            case "Vas a la Cárcel":
-                System.out.println("¡Vas directo a la cárcel!");
+            case "Vas a la Carcel":
+                System.out.println("¡Vas directo a la carcel!");
                 jugador.setEstaEnCarcel(true);
                 jugador.setPosicionActual(tablero.getIndiceCarcel());  // manda a la casilla cárcel
                 jugador.setContadorCarcel(0);  // reinicia contador
@@ -903,7 +903,7 @@ public class Juego_MartinArayaGaete_217813697 {
         if (!especial && casilla.getPrecio() > 0) {
             try {
                 if (casilla.getDueno() == null) {
-                    System.out.print("¿Comprar \"" + casilla.getNombre() + "\" por $" + casilla.getPrecio() + "? (S/N): ");
+                    System.out.print("Comprar \"" + casilla.getNombre() + "\" por $" + casilla.getPrecio() + "? (S/N): ");
                     String resp = sc.nextLine().trim();
                     if (resp.equalsIgnoreCase("S")) {
                         comprarPropiedad(jugador, casilla);
@@ -936,6 +936,13 @@ public class Juego_MartinArayaGaete_217813697 {
 
     }
 
+    /**
+     * Avanza el turno al siguiente jugador y verifica si el juego debe finalizar.
+     * Este método incrementa el indice del turno actual, y luego evalúa si solo queda un
+     * jugador que no esta en bancarrota. En tal caso, declara al jugador como ganador
+     * y marca el juego como terminado.
+     * Si aún quedan varios jugadores activos, simplemente indica quién tiene el siguiente turno.
+     */
     private void avanzarYVerificarFin() {
         // Avanza al siguiente jugador
         turnoActual = (turnoActual + 1) % jugadores.size();

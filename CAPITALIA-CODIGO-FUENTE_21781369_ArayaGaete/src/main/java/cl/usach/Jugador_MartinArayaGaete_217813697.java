@@ -91,7 +91,7 @@ public class Jugador_MartinArayaGaete_217813697 {
 
     public void pagaDinero(int monto) {
         this.dinero -= monto;
-        System.out.println(nombre + (monto >= 0 ? " pagó $" + monto : " recibió $" + (-monto)) + ".");
+        System.out.println(nombre + (monto >= 0 ? " pago $" + monto : " recibio $" + (-monto)) + ".");
     }
 
     /**

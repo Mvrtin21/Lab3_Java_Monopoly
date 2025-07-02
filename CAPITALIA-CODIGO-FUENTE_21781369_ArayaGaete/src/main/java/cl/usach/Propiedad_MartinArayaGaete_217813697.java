@@ -5,7 +5,7 @@ import java.util.Objects;
 
 /**
  * Representa una propiedad en el juego CAPITALIA.
- * Contiene información de precio, renta, propietario y estado de hipoteca.
+ * Contiene información de precio, renta, propietario, si es hotel, tipo (especial o propiedad normal) y estado de hipoteca.
  */
 public class Propiedad_MartinArayaGaete_217813697 {
     private int id;
