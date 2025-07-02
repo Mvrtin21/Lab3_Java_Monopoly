@@ -1,0 +1,178 @@
+### CAPITALIA - Menú Principal ###
+1. Crear nueva partida
+8. Salir
+9. Importar partida desde archivo
+Seleccione opción: 1
+
+--- Creando nueva partida ---
+¿Cuántos jugadores? (mínimo 2): 2
+Nombre jugador 1: Martin
+Nombre jugador 2: Gonzalo
+¿Cuántos dados por turno? (1-4): 2
+Partida creada. ¡A jugar!
+
+### CAPITALIA - Menú Principal ###
+Turno de Martin:
+1. Crear nueva partida
+2. Visualizar estado actual del juego
+3. Jugar turno
+4. Construir casa
+5. Construir hotel
+6. Hipotecar propiedad
+7. Deshipotecar propiedad
+8. Salir
+9. Exportar partida a archivo
+Seleccione opción: 3
+
+--- Turno de Martin ---
+Dados: 4 4 
+Jugador Martin se ha movido a la casilla 8 (La Reina).
+¡Sacaste dados iguales! Contador cárcel = 1
+Repite turno (avanzaste y juegas de nuevo).
+
+### CAPITALIA - Menú Principal ###
+Turno de Martin:
+1. Crear nueva partida
+2. Visualizar estado actual del juego
+3. Jugar turno
+4. Construir casa
+5. Construir hotel
+6. Hipotecar propiedad
+7. Deshipotecar propiedad
+8. Salir
+9. Exportar partida a archivo
+Seleccione opción: 3
+
+--- Turno de Martin ---
+Dados: 3 1 
+Jugador Martin se ha movido a la casilla 12 (Peñalolén).
+Caíste en casilla [12]: Peñalolén
+¿Comprar "Peñalolén" por $550? (S/N): N
+No compraste la propiedad.
+Turno para: Gonzalo
+
+### CAPITALIA - Menú Principal ###
+Turno de Gonzalo:
+1. Crear nueva partida
+2. Visualizar estado actual del juego
+3. Jugar turno
+4. Construir casa
+5. Construir hotel
+6. Hipotecar propiedad
+7. Deshipotecar propiedad
+8. Salir
+9. Exportar partida a archivo
+Seleccione opción: 3
+
+--- Turno de Gonzalo ---
+Dados: 2 2 
+Jugador Gonzalo se ha movido a la casilla 4 (Comunidad).
+¡Sacaste dados iguales! Contador cárcel = 1
+Repite turno (avanzaste y juegas de nuevo).
+
+### CAPITALIA - Menú Principal ###
+Turno de Gonzalo:
+1. Crear nueva partida
+2. Visualizar estado actual del juego
+3. Jugar turno
+4. Construir casa
+5. Construir hotel
+6. Hipotecar propiedad
+7. Deshipotecar propiedad
+8. Salir
+9. Exportar partida a archivo
+Seleccione opción: 3
+
+--- Turno de Gonzalo ---
+Dados: 3 1 
+Jugador Gonzalo se ha movido a la casilla 8 (La Reina).
+Caíste en casilla [8]: La Reina
+¿Comprar "La Reina" por $450? (S/N): N
+No compraste la propiedad.
+Turno para: Martin
+
+### CAPITALIA - Menú Principal ###
+Turno de Martin:
+1. Crear nueva partida
+2. Visualizar estado actual del juego
+3. Jugar turno
+4. Construir casa
+5. Construir hotel
+6. Hipotecar propiedad
+7. Deshipotecar propiedad
+8. Salir
+9. Exportar partida a archivo
+Seleccione opción: 3
+
+--- Turno de Martin ---
+Dados: 2 3 
+Jugador Martin se ha movido a la casilla 17 (Suerte).
+Caíste en casilla [17]: Suerte
+[Carta Comunidad] Te traga bus sin vuelto: PAGA 70
+Martin ha pagado $70. Dinero restante: $1430
+Martin pagó $70.
+Turno para: Gonzalo
+
+### CAPITALIA - Menú Principal ###
+Turno de Gonzalo:
+1. Crear nueva partida
+2. Visualizar estado actual del juego
+3. Jugar turno
+4. Construir casa
+5. Construir hotel
+6. Hipotecar propiedad
+7. Deshipotecar propiedad
+8. Salir
+9. Exportar partida a archivo
+Seleccione opción: 3
+
+--- Turno de Gonzalo ---
+Dados: 3 3 
+Jugador Gonzalo se ha movido a la casilla 14 (Comunidad).
+¡Sacaste dados iguales! Contador cárcel = 1
+Repite turno (avanzaste y juegas de nuevo).
+
+### CAPITALIA - Menú Principal ###
+Turno de Gonzalo:
+1. Crear nueva partida
+2. Visualizar estado actual del juego
+3. Jugar turno
+4. Construir casa
+5. Construir hotel
+6. Hipotecar propiedad
+7. Deshipotecar propiedad
+8. Salir
+9. Exportar partida a archivo
+Seleccione opción: 3
+
+--- Turno de Gonzalo ---
+Dados: 3 4 
+Jugador Gonzalo se ha movido a la casilla 21 (Lo Barnechea).
+Caíste en casilla [21]: Lo Barnechea
+¿Comprar "Lo Barnechea" por $850? (S/N): N
+No compraste la propiedad.
+Turno para: Martin
+
+### CAPITALIA - Menú Principal ###
+Turno de Martin:
+1. Crear nueva partida
+2. Visualizar estado actual del juego
+3. Jugar turno
+4. Construir casa
+5. Construir hotel
+6. Hipotecar propiedad
+7. Deshipotecar propiedad
+8. Salir
+9. Exportar partida a archivo
+Seleccione opción: 3
+
+--- Turno de Martin ---
+Dados: 5 4 
+Jugador Martin se ha movido a la casilla 26 (Vas a la Cárcel).
+Caíste en casilla [26]: Vas a la Cárcel
+¡Vas directo a la cárcel!
+Turno para: Gonzalo
+
+### CAPITALIA ###
+Ruta para guardar el archivo (ej: partida.json): martinEnCarcel.json
+Partida exportada a: martinEnCarcel.json

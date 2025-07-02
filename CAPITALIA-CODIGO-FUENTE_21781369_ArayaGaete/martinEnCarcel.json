@@ -2,20 +2,20 @@
   "jugadores": [
     {
       "id": 1,
-      "nombre": "martin",
-      "dinero": 1920,
+      "nombre": "Martin",
+      "dinero": 1430,
       "propiedades": [],
-      "posicionActual": 5,
-      "estaEnCarcel": false,
+      "posicionActual": 25,
+      "estaEnCarcel": true,
       "totalCartasSalirCarcel": 0,
       "contadorCarcel": 0
     },
     {
       "id": 2,
-      "nombre": "araya",
-      "dinero": 1400,
+      "nombre": "Gonzalo",
+      "dinero": 1500,
       "propiedades": [],
-      "posicionActual": 23,
+      "posicionActual": 21,
       "estaEnCarcel": false,
       "totalCartasSalirCarcel": 0,
       "contadorCarcel": 0
@@ -28,7 +28,7 @@
         "nombre": "Salida",
         "precio": 0,
         "renta": 0,
-        "dueño": {
+        "dueno": {
           "id": -1,
           "nombre": "Sistema",
           "dinero": 1500,
@@ -78,7 +78,7 @@
         "nombre": "Comunidad",
         "precio": 0,
         "renta": 0,
-        "dueño": {
+        "dueno": {
           "id": -1,
           "nombre": "Sistema",
           "dinero": 1500,
@@ -98,7 +98,7 @@
         "nombre": "Suerte",
         "precio": 0,
         "renta": 0,
-        "dueño": {
+        "dueno": {
           "id": -1,
           "nombre": "Sistema",
           "dinero": 1500,
@@ -148,7 +148,7 @@
         "nombre": "Comunidad",
         "precio": 0,
         "renta": 0,
-        "dueño": {
+        "dueno": {
           "id": -1,
           "nombre": "Sistema",
           "dinero": 1500,
@@ -178,7 +178,7 @@
         "nombre": "Suerte",
         "precio": 0,
         "renta": 0,
-        "dueño": {
+        "dueno": {
           "id": -1,
           "nombre": "Sistema",
           "dinero": 1500,
@@ -218,7 +218,7 @@
         "nombre": "Comunidad",
         "precio": 0,
         "renta": 0,
-        "dueño": {
+        "dueno": {
           "id": -1,
           "nombre": "Sistema",
           "dinero": 1500,
@@ -258,7 +258,7 @@
         "nombre": "Suerte",
         "precio": 0,
         "renta": 0,
-        "dueño": {
+        "dueno": {
           "id": -1,
           "nombre": "Sistema",
           "dinero": 1500,
@@ -288,7 +288,7 @@
         "nombre": "Comunidad",
         "precio": 0,
         "renta": 0,
-        "dueño": {
+        "dueno": {
           "id": -1,
           "nombre": "Sistema",
           "dinero": 1500,
@@ -338,7 +338,7 @@
         "nombre": "Comunidad",
         "precio": 0,
         "renta": 0,
-        "dueño": {
+        "dueno": {
           "id": -1,
           "nombre": "Sistema",
           "dinero": 1500,
@@ -358,7 +358,7 @@
         "nombre": "Suerte",
         "precio": 0,
         "renta": 0,
-        "dueño": {
+        "dueno": {
           "id": -1,
           "nombre": "Sistema",
           "dinero": 1500,
@@ -378,7 +378,7 @@
         "nombre": "Cárcel",
         "precio": 0,
         "renta": 0,
-        "dueño": {
+        "dueno": {
           "id": -1,
           "nombre": "Sistema",
           "dinero": 1500,
@@ -398,7 +398,7 @@
         "nombre": "Vas a la Cárcel",
         "precio": 0,
         "renta": 0,
-        "dueño": {
+        "dueno": {
           "id": -1,
           "nombre": "Sistema",
           "dinero": 1500,
@@ -409,7 +409,7 @@
           "contadorCarcel": 0
         },
         "casas": 0,
-        "tipo": "Carcel",
+        "tipo": "Vas a la Cárcel",
         "esHotel": false,
         "estaHipotecada": false
       },
@@ -418,7 +418,7 @@
         "nombre": "Estacionamiento Libre",
         "precio": 0,
         "renta": 0,
-        "dueño": {
+        "dueno": {
           "id": -1,
           "nombre": "Sistema",
           "dinero": 1500,
@@ -438,7 +438,7 @@
         "nombre": "Impuesto Municipal",
         "precio": 0,
         "renta": 300,
-        "dueño": {
+        "dueno": {
           "id": -1,
           "nombre": "Sistema",
           "dinero": 1500,
@@ -458,7 +458,7 @@
         "nombre": "Impuesto Verde",
         "precio": 0,
         "renta": 500,
-        "dueño": {
+        "dueno": {
           "id": -1,
           "nombre": "Sistema",
           "dinero": 1500,
@@ -513,15 +513,27 @@
       },
       {
         "tipo": "Suerte",
+        "accion": "PAGA 80",
+        "id": 7,
+        "descripcion": "Asado en la casa de un amigo"
+      },
+      {
+        "tipo": "Suerte",
+        "accion": "RECIBE 500",
+        "id": 8,
+        "descripcion": "Recibes premio de loto"
+      },
+      {
+        "tipo": "Suerte",
         "accion": "PAGA 200",
         "id": 9,
         "descripcion": "Multa por mal estacionarte"
       },
       {
         "tipo": "Suerte",
-        "accion": "PAGA 70",
-        "id": 10,
-        "descripcion": "Te traga bus sin vuelto"
+        "accion": "IMPUESTO 30",
+        "id": 11,
+        "descripcion": "Jara salió presidente, el impuesto cambia a 30% IVA"
       }
     ],
     "cartasComunidad": [
@@ -578,6 +590,18 @@
         "accion": "PAGA 120",
         "id": 9,
         "descripcion": "Inflación repentina"
+      },
+      {
+        "tipo": "Comunidad",
+        "accion": "PAGA 100",
+        "id": 10,
+        "descripcion": "Donas a la Teletón"
+      },
+      {
+        "tipo": "Comunidad",
+        "accion": "IMPUESTO 1",
+        "id": 11,
+        "descripcion": "Milei llego a gobernar Chile!, impuesto del 1% IVA"
       }
     ]
   },

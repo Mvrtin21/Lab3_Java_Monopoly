@@ -11,9 +11,9 @@ public class Hotel_MartinArayaGaete_217813697 extends Propiedad_MartinArayaGaete
             String nombre,
             int precio,
             int renta,
-            Jugador_MartinArayaGaete_217813697 dueño) {
+            Jugador_MartinArayaGaete_217813697 dueno) {
         // Ahora invocamos el constructor de Propiedad que recibe el 'tipo'
-        super(id, nombre, precio, renta, dueño, "Hotel");
+        super(id, nombre, precio, renta, dueno, "Hotel");
         // Un Hotel reemplaza todas las casas: ponemos casas a 0
         setCasas(0);
     }
@@ -22,6 +22,6 @@ public class Hotel_MartinArayaGaete_217813697 extends Propiedad_MartinArayaGaete
     public String toString() {
         return String.format("Hotel[id=%d, nombre=%s, precio=%d, renta=%d, dueño=%s]",
                 getId(), getNombre(), getPrecio(), getRenta(),
-                getDueño() != null ? getDueño().getNombre() : "Banco");
+                getDueno() != null ? getDueno().getNombre() : "Banco");
     }
 }

@@ -22,6 +22,15 @@ public class Tablero_MartinArayaGaete_217813697 {
         this.cartasComunidad = new ArrayList<>();
     }
 
+    /**
+     * RF12. (0.1 pts) Agregar Propiedad al tablero.
+     *
+     * Este método recibe una instancia de Propiedad y la añade
+     * a la lista de casillas del tablero, ampliando así el conjunto
+     * de propiedades disponibles en la partida.
+     *
+     * @param propiedad la propiedad que se incorporará al tablero
+     */
     public void agregarPropiedad(Propiedad_MartinArayaGaete_217813697 propiedad) {
         propiedades.add(propiedad);
     }

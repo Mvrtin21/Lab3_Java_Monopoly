@@ -84,6 +84,8 @@ public class Juego_MartinArayaGaete_217813697 {
                 "Multa por mal estacionarte", "PAGA 200"));
         tablero.agregarCartaSuerte(new CartaSuerte_MartinArayaGaete_217813697(10,
                 "Te traga bus sin vuelto", "PAGA 70"));
+        tablero.agregarCartaSuerte(new CartaSuerte_MartinArayaGaete_217813697(11,
+                "Jara salió presidente, el impuesto cambia a 30% IVA", "IMPUESTO 30"));
 
         // Cartas de Comunidad
         tablero.agregarCartaComunidad(new CartaComunidad_MartinArayaGaete_217813697(1,
@@ -106,6 +108,8 @@ public class Juego_MartinArayaGaete_217813697 {
                 "Inflación repentina", "PAGA 120"));
         tablero.agregarCartaComunidad(new CartaComunidad_MartinArayaGaete_217813697(10,
                 "Donas a la Teletón", "PAGA 100"));
+        tablero.agregarCartaComunidad(new CartaComunidad_MartinArayaGaete_217813697(11,
+                "Milei llego a gobernar Chile!, impuesto del 1% IVA", "IMPUESTO 1"));
     }
 
     /**
@@ -114,10 +118,10 @@ public class Juego_MartinArayaGaete_217813697 {
      * Este metodo inicializa el tablero agregando, en orden:
      *   - La casilla "Salida" id = 0.
      *   - Un bloque de propiedades de comunas chilenas, con precio y renta crecientes.
-     *   - Una casilla “Comunidad” cada 3 propiedades.
-     *   - Una casilla “Suerte” cada 4 propiedades.
-     *   - Las casillas especiales finales: “Cárcel”, “Vas a la Cárcel”,
-     *     “Estacionamiento Libre”, “Impuesto Municipal” e “Impuesto Verde”.
+     *   - Una casilla "Comunidad" cada 3 propiedades.
+     *   - Una casilla "Suerte" cada 4 propiedades.
+     *   - Las casillas especiales finales: "Cárcel", "Vas a la Cárcel",
+     *     "Estacionamiento Libre", "Impuesto Municipal" e "Impuesto Verde".
      *
      * No recibe parámetros ni devuelve valor.
      * Se invoca al crear una nueva partida para preparar el tablero.
@@ -178,7 +182,7 @@ public class Juego_MartinArayaGaete_217813697 {
         tablero.agregarPropiedad(new Propiedad_MartinArayaGaete_217813697(
                 id++, "Vas a la Cárcel", 0, 0,
                 new Jugador_MartinArayaGaete_217813697(-1, "Sistema"),
-                "Carcel"
+                "Vas a la Cárcel"
         ));
         tablero.agregarPropiedad(new Propiedad_MartinArayaGaete_217813697(
                 id++, "Estacionamiento Libre", 0, 0,
@@ -277,20 +281,6 @@ public class Juego_MartinArayaGaete_217813697 {
         return maximoHoteles;
     }
 
-
-    /**
-     * RF12. (0.1 pts) Agregar Propiedad al tablero.
-     *
-     * Este método recibe una instancia de Propiedad y la añade
-     * a la lista de casillas del tablero, ampliando así el conjunto
-     * de propiedades disponibles en la partida.
-     *
-     * @param propiedad la propiedad que se incorporará al tablero
-     */
-    public void agregarPropiedadAlTablero(Propiedad_MartinArayaGaete_217813697 propiedad) {
-        tablero.agregarPropiedad(propiedad);
-    }
-
     /**
      * RF13. (0.1 pts) Agregar Jugador a la partida.
      *
@@ -364,9 +354,9 @@ public class Juego_MartinArayaGaete_217813697 {
         for (Jugador_MartinArayaGaete_217813697 jugador : jugadores) {
             if (jugador.getId() == idJugador) {
                 int posicionActual = jugador.getPosicionActual();
-                int tamañoTablero = tablero.getPropiedades().size();
+                int tamanoTablero = tablero.getPropiedades().size();
 
-                int nuevaPosicion = (posicionActual + pasos) % tamañoTablero;
+                int nuevaPosicion = (posicionActual + pasos) % tamanoTablero;
                 jugador.setPosicionActual(nuevaPosicion);
 
                 System.out.println("Jugador " + jugador.getNombre() + " se ha movido a la casilla " + nuevaPosicion +
@@ -391,7 +381,7 @@ public class Juego_MartinArayaGaete_217813697 {
      */
     public boolean comprarPropiedad(Jugador_MartinArayaGaete_217813697 jugador, Propiedad_MartinArayaGaete_217813697 propiedad) {
         // Verificar si la propiedad ya tiene dueño
-        if (propiedad.getDueño() != null) {
+        if (propiedad.getDueno() != null) {
             System.out.println("La propiedad \"" + propiedad.getNombre() + "\" ya tiene dueño.");
             return false;
         }
@@ -411,7 +401,7 @@ public class Juego_MartinArayaGaete_217813697 {
         // Realizar la compra
         jugador.setDinero(jugador.getDinero() - propiedad.getPrecio());
         jugador.agregarPropiedad(propiedad);
-        propiedad.setDueño(jugador);
+        propiedad.setDueno(jugador);
 
         System.out.println("¡" + jugador.getNombre() + " ha comprado \"" + propiedad.getNombre() + "\" por $" + propiedad.getPrecio() + "!");
         return true;
@@ -430,7 +420,7 @@ public class Juego_MartinArayaGaete_217813697 {
      */
     public int calcularRentaPropiedad(Propiedad_MartinArayaGaete_217813697 propiedad) {
         // Si la propiedad está hipotecada o no tiene dueño, no se cobra renta
-        if (propiedad.isEstaHipotecada() || propiedad.getDueño() == null || propiedad.getDueño().getId() == -1) {
+        if (propiedad.isEstaHipotecada() || propiedad.getDueno() == null || propiedad.getDueno().getId() == -1) {
             return 0;
         }
 
@@ -491,7 +481,7 @@ public class Juego_MartinArayaGaete_217813697 {
      * @return true si la construcción fue exitosa; false en caso contrario
      */
     public boolean construirHotel(Jugador_MartinArayaGaete_217813697 jugador, Propiedad_MartinArayaGaete_217813697 propiedad) {
-        if (propiedad.getDueño() == null || propiedad.getDueño().getId() != jugador.getId()) {
+        if (propiedad.getDueno() == null || propiedad.getDueno().getId() != jugador.getId()) {
             System.out.println("No puedes construir un hotel en \"" + propiedad.getNombre() + "\" porque no eres el dueño.");
             return false;
         }
@@ -529,7 +519,7 @@ public class Juego_MartinArayaGaete_217813697 {
      */
     public boolean construirCasa(Jugador_MartinArayaGaete_217813697 jugador, Propiedad_MartinArayaGaete_217813697 propiedad) {
 
-        if (propiedad.getDueño() == null || !propiedad.getDueño().equals(jugador)) {
+        if (propiedad.getDueno() == null || !propiedad.getDueno().equals(jugador)) {
             System.out.println("Error: El jugador \"" + jugador.getNombre() + "\" no es el dueño de \"" + propiedad.getNombre() + "\".");
             return false;
         }
@@ -573,9 +563,9 @@ public class Juego_MartinArayaGaete_217813697 {
      * @return true si el pago se realizó con éxito; false si no se pagó o hubo bancarrota
      */
     public boolean pagarRenta(Jugador_MartinArayaGaete_217813697 quienPaga, Propiedad_MartinArayaGaete_217813697 propiedad) {
-        Jugador_MartinArayaGaete_217813697 dueño = propiedad.getDueño();
+        Jugador_MartinArayaGaete_217813697 dueno = propiedad.getDueno();
 
-        if (dueño == null || dueño == quienPaga) {
+        if (dueno == null || dueno == quienPaga) {
             // No se paga renta si no hay dueño o si es suya
             return false;
         }
@@ -584,12 +574,12 @@ public class Juego_MartinArayaGaete_217813697 {
 
         if (quienPaga.getDinero() < renta) {
             System.out.println("¡" + quienPaga.getNombre() + " no tiene suficiente dinero para pagar la renta de $" + renta + "!");
-            System.out.println("Se declara bancarrota. Todas sus propiedades pasarán a " + dueño.getNombre() + ".");
+            System.out.println("Se declara bancarrota. Todas sus propiedades pasarán a " + dueno.getNombre() + ".");
 
             // Transferencia de propiedades
             for (Propiedad_MartinArayaGaete_217813697 prop : quienPaga.getPropiedades()) {
-                prop.setDueño(dueño);
-                dueño.agregarPropiedad(prop);
+                prop.setDueno(dueno);
+                dueno.agregarPropiedad(prop);
             }
 
             // Limpiar jugador en bancarrota
@@ -602,9 +592,9 @@ public class Juego_MartinArayaGaete_217813697 {
 
         // Pago normal
         quienPaga.setDinero(quienPaga.getDinero() - renta);
-        dueño.setDinero(dueño.getDinero() + renta);
+        dueno.setDinero(dueno.getDinero() + renta);
 
-        System.out.println(quienPaga.getNombre() + " pagó $" + renta + " a " + dueño.getNombre() + " por la propiedad \"" + propiedad.getNombre() + "\".");
+        System.out.println(quienPaga.getNombre() + " pagó $" + renta + " a " + dueno.getNombre() + " por la propiedad \"" + propiedad.getNombre() + "\".");
         return true;
     }
 
@@ -621,7 +611,7 @@ public class Juego_MartinArayaGaete_217813697 {
      */
     public boolean hipotecarPropiedad(Jugador_MartinArayaGaete_217813697 jugador, Propiedad_MartinArayaGaete_217813697 propiedad) {
         // Verifica que el jugador sea el dueño
-        if (propiedad.getDueño() == null || propiedad.getDueño() != jugador) {
+        if (propiedad.getDueno() == null || propiedad.getDueno() != jugador) {
             System.out.println("No puedes hipotecar una propiedad que no te pertenece.");
             return false;
         }
@@ -652,7 +642,7 @@ public class Juego_MartinArayaGaete_217813697 {
      * @return true si la deshipoteca fue exitosa; false en caso contrario
      */
     public boolean deshipotecarPropiedad(Jugador_MartinArayaGaete_217813697 jugador, Propiedad_MartinArayaGaete_217813697 propiedad) {
-        if (propiedad.getDueño() == null || propiedad.getDueño() != jugador) {
+        if (propiedad.getDueno() == null || propiedad.getDueno() != jugador) {
             System.out.println("No puedes deshipotecar una propiedad que no te pertenece.");
             return false;
         }
@@ -675,7 +665,6 @@ public class Juego_MartinArayaGaete_217813697 {
         System.out.println("Has deshipotecado \"" + propiedad.getNombre() + "\" pagando $" + penalizacion + ".");
         return true;
     }
-
 
     /**
      * RF24. (0.1 pts) Verificar bancarrota.
@@ -707,7 +696,7 @@ public class Juego_MartinArayaGaete_217813697 {
 
         int n;
         while (true) {
-            System.out.print("¿Cuántos jugadores? (mínimo 2): ");
+            System.out.print("Cuantos jugadores? (minimo 2): ");
             try {
                 n = Integer.parseInt(sc.nextLine().trim());
                 if (n < 2) {
@@ -716,7 +705,7 @@ public class Juego_MartinArayaGaete_217813697 {
                     break;
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Eso no es un número válido. Intenta de nuevo.");
+                System.out.println("Eso no es un numero valido. Intenta de nuevo.");
             }
         }
 
@@ -726,7 +715,7 @@ public class Juego_MartinArayaGaete_217813697 {
                 System.out.print("Nombre jugador " + i + ": ");
                 nombre = sc.nextLine().trim();
                 if (nombre.isEmpty()) {
-                    System.out.println("No podís dejar el nombre en blanco, po.");
+                    System.out.println("No podi dejar el nombre en blanco, po.");
                 }
             } while (nombre.isEmpty());
 
@@ -735,16 +724,16 @@ public class Juego_MartinArayaGaete_217813697 {
 
         int dados;
         while (true) {
-            System.out.print("¿Cuántos dados por turno? (1-4): ");
+            System.out.print("Cuantos dados por turno? (1-4): ");
             try {
                 dados = Integer.parseInt(sc.nextLine().trim());
                 if (dados < 1 || dados > 4) {
-                    System.out.println("¿Y voh querí tirar " + dados + " dados? No po... elige entre 1 y 4.");
+                    System.out.println("¿Y voh queri tirar " + dados + " dados? No po... elige entre 1 y 4.");
                 } else {
                     break;
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Eso no es un número válido. Intenta de nuevo.");
+                System.out.println("Eso no es un número valido. Intenta de nuevo.");
             }
         }
 
@@ -823,7 +812,7 @@ public class Juego_MartinArayaGaete_217813697 {
             }
         }
 
-        // --- FUERA DE LA CÁRCEL ---
+        // --- FUERA DE LA CARCEL ---
         List<Integer> resultados = lanzarDados();
         System.out.print("Dados: ");
         resultados.forEach(d -> System.out.print(d + " "));
@@ -832,8 +821,8 @@ public class Juego_MartinArayaGaete_217813697 {
         // 2) Mover y pagar impuestos al pasar Salida
         int pasos = resultados.stream().mapToInt(Integer::intValue).sum();
         int posInicial = jugador.getPosicionActual();
-        int tamañoTablero = tablero.getPropiedades().size();
-        boolean pasoSalida = (posInicial + pasos) >= tamañoTablero;
+        int tamanoTablero = tablero.getPropiedades().size();
+        boolean pasoSalida = (posInicial + pasos) >= tamanoTablero;
         moverJugador(jugador.getId(), pasos);
         if (pasoSalida) {
             int impuestos = calcularRentaJugador(jugador);
@@ -849,7 +838,7 @@ public class Juego_MartinArayaGaete_217813697 {
                 }
             }
         }
-        // 3) Detectar “n”-ples iguales (dobles/triples/cuádruples…)
+        // 3) Detectar "n"-ples iguales (dobles/triples/cuádruples…)
         boolean todosIguales = resultados.stream().distinct().count() == 1;
         if (todosIguales) {
             // Incrementa contador positivo
@@ -913,7 +902,7 @@ public class Juego_MartinArayaGaete_217813697 {
         // 5) Propiedades normales (compra/renta)
         if (!especial && casilla.getPrecio() > 0) {
             try {
-                if (casilla.getDueño() == null) {
+                if (casilla.getDueno() == null) {
                     System.out.print("¿Comprar \"" + casilla.getNombre() + "\" por $" + casilla.getPrecio() + "? (S/N): ");
                     String resp = sc.nextLine().trim();
                     if (resp.equalsIgnoreCase("S")) {
@@ -921,7 +910,7 @@ public class Juego_MartinArayaGaete_217813697 {
                     } else {
                         System.out.println("No compraste la propiedad.");
                     }
-                } else if (casilla.getDueño() != jugador) {
+                } else if (casilla.getDueno() != jugador) {
                     pagarRenta(jugador, casilla);
                 }
             } catch (Exception e) {
@@ -933,7 +922,7 @@ public class Juego_MartinArayaGaete_217813697 {
         turnoActual = (turnoActual + 1) % jugadores.size();
         System.out.println("Turno para: " + jugadores.get(turnoActual).getNombre());
 
-        //Transfiere todo_ lo que el “Sistema” (jugador con ID = -1) haya cobrado al banco del juego
+        //Transfiere todo_ lo que el "Sistema" (jugador con ID = -1) haya cobrado al banco del juego
         Jugador_MartinArayaGaete_217813697 sistema = jugadores.stream()
                 .filter(j -> j.getId() == -1)
                 .findFirst()
@@ -979,7 +968,10 @@ public class Juego_MartinArayaGaete_217813697 {
      */
     public void exportar(String ruta) {
         try (FileWriter writer = new FileWriter(ruta)) {
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            Gson gson = new GsonBuilder()
+                    .setPrettyPrinting()
+                    .excludeFieldsWithModifiers(java.lang.reflect.Modifier.TRANSIENT)
+                    .create();
             gson.toJson(this, writer);
             System.out.println("Partida exportada a: " + ruta);
         } catch (IOException e) {
@@ -1001,10 +993,20 @@ public class Juego_MartinArayaGaete_217813697 {
     public static Juego_MartinArayaGaete_217813697 importar(String ruta) {
         try (FileReader reader = new FileReader(ruta)) {
             Gson gson = new Gson();
-            return gson.fromJson(reader, Juego_MartinArayaGaete_217813697.class);
+            Juego_MartinArayaGaete_217813697 juego = gson.fromJson(reader, Juego_MartinArayaGaete_217813697.class);
+
+            // Restaurar referencias a dueños
+            for (Jugador_MartinArayaGaete_217813697 jugador : juego.getJugadores()) {
+                for (Propiedad_MartinArayaGaete_217813697 prop : jugador.getPropiedades()) {
+                    prop.setDueno(jugador);
+                }
+            }
+
+            return juego;
         } catch (IOException e) {
             System.out.println("Error al importar partida: " + e.getMessage());
             return null;
         }
     }
+
 }

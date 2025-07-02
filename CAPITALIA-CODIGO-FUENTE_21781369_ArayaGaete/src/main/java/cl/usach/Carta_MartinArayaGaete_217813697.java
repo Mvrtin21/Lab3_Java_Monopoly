@@ -37,6 +37,6 @@ public abstract class Carta_MartinArayaGaete_217813697 {
     /**
      * Acción que debe ejecutarse cuando se usa la carta.
      * Se deja abstracto para que las subclases definan su comportamiento.
-     */
+     * @param juego Objeto juego     */
     public abstract void ejecutarAccion(Juego_MartinArayaGaete_217813697 juego);
 }

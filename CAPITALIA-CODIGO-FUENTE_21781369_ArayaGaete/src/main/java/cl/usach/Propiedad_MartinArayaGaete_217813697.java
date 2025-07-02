@@ -12,7 +12,7 @@ public class Propiedad_MartinArayaGaete_217813697 {
     private String nombre;
     private int precio;
     private int renta;
-    private Jugador_MartinArayaGaete_217813697 dueño;
+    private transient Jugador_MartinArayaGaete_217813697 dueno;
     private int casas;
 
     // nuevo
@@ -24,13 +24,13 @@ public class Propiedad_MartinArayaGaete_217813697 {
 
     public Propiedad_MartinArayaGaete_217813697(
             int id, String nombre, int precio, int renta,
-            Jugador_MartinArayaGaete_217813697 dueño,
+            Jugador_MartinArayaGaete_217813697 dueno,
             String tipo) {
         this.id = id;
         this.nombre = Objects.requireNonNull(nombre, "El nombre no puede ser null");
         this.precio = precio;
         this.renta = renta;
-        this.dueño = dueño;
+        this.dueno = dueno;
         this.casas = 0;
         this.esHotel = false;
         this.estaHipotecada = false;
@@ -39,8 +39,8 @@ public class Propiedad_MartinArayaGaete_217813697 {
     @Override
     public String toString() {
         return "[" + id + "] " + nombre + " (" + tipo + ") - Precio: $" + precio
-                + ", Renta: $" + renta + ", casas: " + casas + ", EsHotel?: $" + esHotel + ", Dueño: "
-                + (dueño != null ? dueño.getNombre() : "ninguno");
+                + ", Renta: $" + renta + ", casas: " + casas + ", EsHotel?: " + esHotel + ", Dueño: "
+                + (dueno != null ? dueno.getNombre() : "ninguno");
     }
 
     // Id
@@ -76,11 +76,11 @@ public class Propiedad_MartinArayaGaete_217813697 {
     }
 
     // Dueño
-    public Jugador_MartinArayaGaete_217813697 getDueño() {
-        return dueño;
+    public Jugador_MartinArayaGaete_217813697 getDueno() {
+        return dueno;
     }
-    public void setDueño(Jugador_MartinArayaGaete_217813697 dueño) {
-        this.dueño = dueño;
+    public void setDueno(Jugador_MartinArayaGaete_217813697 dueno) {
+        this.dueno = dueno;
     }
 
     // Casas

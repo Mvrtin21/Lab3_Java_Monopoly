@@ -47,6 +47,10 @@ public class CartaComunidad_MartinArayaGaete_217813697 extends Carta_MartinAraya
         } else if (accion.startsWith("RECIBE")) {
             int monto = Integer.parseInt(accion.split(" ")[1]);
             jugador.pagaDinero(-monto);
+        }
+        else if (accion.startsWith("IMPUESTO")) {
+            int impuesto = Integer.parseInt(accion.split(" ")[1]);
+            juego.setTasaImpuesto(impuesto);
         } else if (accion.startsWith("AVANZA")) {
             int pasos = Integer.parseInt(accion.split(" ")[1]);
             juego.moverJugador(jugador.getId(), pasos);

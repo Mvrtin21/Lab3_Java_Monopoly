@@ -95,7 +95,7 @@ public class Jugador_MartinArayaGaete_217813697 {
     }
 
     /**
-     * Disminuye en 1 el contador de cartas “Salir de la cárcel”.
+     * Disminuye en 1 el contador de cartas "Salir de la cárcel".
      * Asegúrate de que totalCartasSalirCarcel nunca sea negativo.
      */
     public void decrementarCartaSalirCarcel() {
